@@ -308,7 +308,7 @@
                     We present many films from various main categories, let's chosse and search film you like.
                 </h3>
             </div>
-            <div class="aobut__wrapper">
+            <div class="about__wrapper">
                 <div class="about__item">
                     <div class="about__icon-wrapper">
                         <img src="{{asset('img/about/info-icon.png')}}" alt="" class="about__icon">
@@ -316,7 +316,7 @@
                     <div class="about__text">
                         <h3 class="about__title">Lorem Ipsum</h3>
                         <p class="about__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae
-                            vel fugit alias aspernatur accusantium neque eligendi nulla provident, ab natus?</p>
+                            vel fugit alias aspernatur accusantium.</p>
                     </div>
                 </div>
                 <div class="about__item">
@@ -326,7 +326,7 @@
                     <div class="about__text">
                         <h3 class="about__title">Lorem Ipsum</h3>
                         <p class="about__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae
-                            vel fugit alias aspernatur accusantium neque eligendi nulla provident, ab natus?</p>
+                            vel fugit alias aspernatur accusantium.</p>
                     </div>
                 </div>
                 <div class="about__item">
@@ -336,12 +336,92 @@
                     <div class="about__text">
                         <h3 class="about__title">Lorem Ipsum</h3>
                         <p class="about__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae
-                            vel fugit alias aspernatur accusantium neque eligendi nulla provident, ab natus?</p>
+                            vel fugit alias aspernatur accusantium.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <section class="section testimonials">
+        <div class="section__wrapper">
+            <div class="section__heading">
+                <h1 class="section__title">Testimonials</h1>
+                <h3 class="section__subtitle">
+                    We present many films from various main categories, let's chosse and search film you like.
+                </h3>
+            </div>
+            <div class="testimonials__items">
+                <div class="testimonials__item">
+                    <span class="testimonials__quote">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Eveniet natus dolorum, ratione numquam quod provident, ipsa ipsam quas fuga reiciendis
+                        veniam dolorem labore ab.</span>
+                    <img src="{{asset('img/testimonials/portrait-1.jpg')}}" alt="" class="testimonials__image">
+                    <h3 class="testimonials__name">Lorem Ipsum</h3>
+                    <span class="testimonials__position">Lorem Ipsum</span>
+                </div>
+                <div class="testimonials__item">
+                    <span class="testimonials__quote">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Eveniet natus dolorum, ratione numquam quod provident, ipsa ipsam quas fuga reiciendis
+                        veniam dolorem labore ab.</span>
+                    <img src="{{asset('img/testimonials/portrait-2.jpg')}}" alt="" class="testimonials__image">
+                    <h3 class="testimonials__name">Lorem Ipsum</h3>
+                    <span class="testimonials__position">Lorem Ipsum</span>
+                </div>
+                <div class="testimonials__item">
+                    <span class="testimonials__quote">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Eveniet natus dolorum, ratione numquam quod provident, ipsa ipsam quas fuga reiciendis
+                        veniam dolorem labore ab.</span>
+                    <img src="{{asset('img/testimonials/portrait-3.jpg')}}" alt="" class="testimonials__image">
+                    <h3 class="testimonials__name">Lorem Ipsum</h3>
+                    <span class="testimonials__position">Lorem Ipsum</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="footer__wrapper">
+
+            <div class="footer__column">
+                <h3 class="footer__heading">Quick menu</h3>
+                <ul class="footer__list">
+                    <li class="footer__item"><a href="#" class="footer__link">Home</a></li>
+                    <li class="footer__item"><a href="#" class="footer__link">Genres</a></li>
+                    <li class="footer__item"><a href="#" class="footer__link">Popular</a></li>
+                    <li class="footer__item"><a href="#" class="footer__link">About</a></li>
+                    <li class="footer__item"><a href="#" class="footer__link">Testimonials</a></li>
+                </ul>
+            </div>
+            <div class="footer__column">
+                <h3 class="footer__heading">Account</h3>
+                <ul class="footer__list">
+                    <li class="footer__item"><a href="#" class="footer__link">My account</a></li>
+                    <li class="footer__item"><a href="#" class="footer__link">Login</a></li>
+                    <li class="footer__item"><a href="#" class="footer__link">Register</a></li>
+                    <li class="footer__item"><a href="#" class="footer__link">Favourites</a></li>
+                    <li class="footer__item"><a href="#" class="footer__link">Watch list</a></li>
+                </ul>
+            </div>
+            <div class="footer__column">
+                <h3 class="footer__heading">Information</h3>
+                <ul class="footer__list">
+                    <li class="footer__item"><a href="#" class="footer__link">API</a></li>
+                    <li class="footer__item"><a href="#" class="footer__link">Github Repo</a></li>
+                    <li class="footer__item"><a href="#" class="footer__link">Author</a></li>
+                </ul>
+            </div>
+            <div class="footer__column">
+                <h3 class="footer__heading">Movie App</h3>
+                <p class="footer__text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quaerat provident,
+                    magni obcaecati aliquid iusto aperiam modi ex excepturi beatae nisi amet sunt recusandae rem fuga,
+                    non similique commodi possimus dolorem.</p>
+            </div>
+        </div>
+
+        <p class="footer__author">Made with <img class="footer__icon" src="{{asset('img/heart-icon.png')}}" alt=""> by
+            <a class="footer__author-link" href="#">Jakub Lipiński</a></p>
+
+    </footer>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
