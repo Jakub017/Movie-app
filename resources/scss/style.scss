@@ -57,10 +57,6 @@ $desktop-body-text: 18px;
     }
 }
 
-.genres {
-    position: relative;
-}
-
 .nav {
     position: fixed;
     width: 100%;
@@ -295,6 +291,10 @@ $desktop-body-text: 18px;
 
     &__link {
         color: $primary-red;
+
+        &:hover {
+            color: $primary-red;
+        }
     }
 
     &__icon-wrapper {
@@ -308,13 +308,173 @@ $desktop-body-text: 18px;
     }
 }
 
+.popular {
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        gap: 20px;
+        padding: 30px 0px;
+        width: 100%;
+
+    }
+
+    &__list {
+        padding: 0;
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 20px;
+        width: 100%;
+    }
+
+    &__link {
+        padding: 10px 20px;
+        border-radius: 50rem;
+        width: 120px;
+        text-align: center;
+        border: 1px solid #ccc;
+        background-color: transparent;
+        outline: none;
+        color: #ccc;
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+            background-color: rgba(223, 58, 58, 0.2);
+        }
+
+        &--active {
+            background-color: $primary-red;
+            border-color: $primary-red;
+
+            &:hover {
+                background-color: $primary-red;
+            }
+        }
+    }
+
+    &__movies {
+        width: fit-content;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+        overflow: hidden;
+        width: 100%;
+        max-width: 1300px;
+        position: relative;
+    }
+
+    &__movies-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 40px;
+        flex-wrap: nowrap;
+        width: fit-content;
+    }
+
+    &__movie {
+        width: 280px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    &__poster {
+        width: 100%;
+    }
+
+    &__title {
+        color: #fff;
+    }
+
+    &__description {
+        color: #ccc;
+    }
+
+    &__controls {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+        width: 100%;
+    }
+
+    &__line {
+        height: 1px;
+        background-color: #ccc;
+        flex-basis: 80%;
+    }
+
+    &__arrows {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        width: 100%;
+        flex-basis: 20%;
+    }
+
+    &__arrow-wrapper {
+        padding: 10px;
+        border-radius: 50rem;
+        width: 50px;
+        height: 50px;
+        border: 1px solid #ccc;
+        background-color: transparent;
+        outline: none;
+        color: #ccc;
+        transition: all 0.3s ease-in-out;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &:hover {
+            background-color: $primary-red;
+            cursor: pointer;
+        }
+    }
+
+    &__arrow {
+        width: 36px;
+    }
+}
+
 
 
 
 // Media queries
+
+@media(min-width: 768px) {
+    .popular {
+        &__movies {
+            position: relative;
+
+            &::after {
+                content: "";
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                width: 200px;
+                z-index: 1;
+                height: 100%;
+                background: linear-gradient(to right, transparent, $primary-color);
+            }
+        }
+    }
+
+}
+
 @media(min-width: 1024px) {
     .section {
-        padding: 100px 40px;
+        padding: 80px 40px;
         background-color: $primary-color;
 
         &__title {
@@ -330,7 +490,7 @@ $desktop-body-text: 18px;
         &__heading {
             display: flex;
             justify-content: space-between;
-            align-items: center;
+            align-items: flex-start;
             flex-direction: row;
             width: 100%;
             gap: 20px;
