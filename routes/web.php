@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\PagesController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,6 +12,14 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+Route::controller(PagesController::class)->group(function(){
+    Route::get('/', 'home')->name('home');
+    Route::get('/movie', 'movie')->name('movie');
+});
+
+
+
 
 Route::get('/', function () {
     return view('home');
