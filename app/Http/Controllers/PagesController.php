@@ -13,4 +13,8 @@ class PagesController extends Controller
     public function movie(){
         return view('movie');
     }
+
+    public function category(){
+        return view('category');
+    }
 }

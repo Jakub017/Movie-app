@@ -150,8 +150,6 @@ $desktop-body-text: 18px;
         }
     }
 
-
-
 }
 
 
@@ -1327,6 +1325,21 @@ $desktop-body-text: 18px;
     }
 }
 
+
+// Category page
+
+.category {
+
+    &__banner {
+        width: 100%;
+        height: 20vh;
+        background: $primary-red;
+        // transform: rotate(50deg);
+    }
+
+}
+
+
 // Media Queries
 @media(min-width: 768px) {
 
@@ -1341,8 +1354,6 @@ $desktop-body-text: 18px;
             align-items: flex-start;
             width: 30%;
         }
-
-
     }
 
     .footer {
@@ -1353,8 +1364,6 @@ $desktop-body-text: 18px;
 }
 
 @media(min-width: 1024px) {
-
-
 
     .movie-mobile-background,
     .movie-mobile-info {
@@ -1527,9 +1536,7 @@ $desktop-body-text: 18px;
             flex-basis: 47%;
         }
     }
-
 }
-
 
 
 @media(min-width: 1600px) {
