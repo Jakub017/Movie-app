@@ -318,20 +318,19 @@
   gap: 20px;
   overflow: hidden;
   width: 100%;
-  max-width: 1300px;
+  max-width: 1400px;
   position: relative;
 }
 .popular__movies-container {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  gap: 40px;
+  align-items: flex-start;
   flex-wrap: nowrap;
   width: -moz-fit-content;
   width: fit-content;
 }
 .popular__movie {
-  width: 280px;
+  max-width: 320px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -343,6 +342,25 @@
 }
 .popular__title {
   color: #fff;
+  font-size: 1.8rem;
+  margin-bottom: 0;
+}
+.popular__info {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  color: #fff;
+  gap: 10px;
+}
+.popular__rating {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 5px;
+}
+.popular__rating-star {
+  width: 24px;
 }
 .popular__description {
   color: #ccc;
@@ -1226,6 +1244,9 @@
   }
   .about__wrapper {
     gap: 40px;
+  }
+  .popular__movie {
+    max-width: 300px;
   }
   .footer__column {
     width: 22%;

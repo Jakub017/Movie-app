@@ -132,96 +132,32 @@
             </h3>
         </div>
         <div class="popular__wrapper">
-            <div class="popular__genres">
-                <ul class="popular__list">
-                    <li class="popular__item">
-                        <button class="popular__link popular__link--active">All</button>
-                    </li>
-                    <li class="popular__item">
-                        <button class="popular__link">Action</button>
-                    </li>
-                    <li class="popular__item">
-                        <button class="popular__link">Fantasy</button>
-                    </li>
-                    <li class="popular__item">
-                        <button class="popular__link">Comedy</button>
-                    </li>
-                    <li class="popular__item">
-                        <button class="popular__link">Drama</button>
-                    </li>
-                    <li class="popular__item">
-                        <button class="popular__link">Mystery</button>
-                    </li>
-                    <li class="popular__item">
-                        <button class="popular__link">Romance</button>
-                    </li>
-                    <li class="popular__item">
-                        <button class="popular__link">Horror</button>
-                    </li>
-                </ul>
-            </div>
-            <div class="popular__movies">
-                <div class="popular__movies-container">
-                    <div class="popular__movie">
-                        <img src="{{asset('img/movies-posters/ant-man-poster.jpg')}}" alt="" class="popular__poster">
-                        <h2 class="popular__title">Ant-Man and The Wasp: Quantumania</h2>
-                        <p class="popular__description">Ant-Man and the Wasp along with Hank Pym and Janet Van Dyne
-                            and
-                            Cassie Lang explore...</p>
-                    </div>
-                    <div class="popular__movie">
-                        <img src="{{asset('img/movies-posters/ant-man-poster.jpg')}}" alt="" class="popular__poster">
-                        <h2 class="popular__title">Ant-Man and The Wasp: Quantumania</h2>
-                        <p class="popular__description">Ant-Man and the Wasp along with Hank Pym and Janet Van Dyne
-                            and
-                            Cassie Lang explore...</p>
-                    </div>
 
-                    <div class="popular__movie">
-                        <img src="{{asset('img/movies-posters/ant-man-poster.jpg')}}" alt="" class="popular__poster">
-                        <h2 class="popular__title">Ant-Man and The Wasp: Quantumania</h2>
-                        <p class="popular__description">Ant-Man and the Wasp along with Hank Pym and Janet Van Dyne
-                            and
-                            Cassie Lang explore...</p>
+
+            <div class="swiper popular__movies">
+                <div class="swiper-wrapper popular__movies-container">
+                    @foreach($popularMovies as $popularMovie)
+                    <div class="swiper-slide popular__movie">
+
+                        <img src="{{ 'https://image.tmdb.org/t/p/w500'.$popularMovie['poster_path'] }}"
+                            alt="{{ $popularMovie['title'] }}" class="popular__poster">
+                        <h2 class="popular__title">{{ $popularMovie['title'] }}</h2>
+                        <div class="popular__info">
+                            <span class="popular__rating"><img class="popular__rating-star"
+                                    src="{{asset('img/red_star.png')}}"
+                                    alt="">{{ $popularMovie['vote_average'] }}</span>
+                            <span>|</span>
+                            <span
+                                class="popular__year">{{ \Carbon\Carbon::parse($popularMovie['release_date'])->format('d.m.Y') }}</span>
+                        </div>
+                        <p class="popular__description">
+                            {{Illuminate\Support\Str::limit($popularMovie['overview'], 120)  }}
+                        </p>
                     </div>
-                    <div class="popular__movie">
-                        <img src="{{asset('img/movies-posters/ant-man-poster.jpg')}}" alt="" class="popular__poster">
-                        <h2 class="popular__title">Ant-Man and The Wasp: Quantumania</h2>
-                        <p class="popular__description">Ant-Man and the Wasp along with Hank Pym and Janet Van Dyne
-                            and
-                            Cassie Lang explore...</p>
-                    </div>
-                    <div class="popular__movie">
-                        <img src="{{asset('img/movies-posters/ant-man-poster.jpg')}}" alt="" class="popular__poster">
-                        <h2 class="popular__title">Ant-Man and The Wasp: Quantumania</h2>
-                        <p class="popular__description">Ant-Man and the Wasp along with Hank Pym and Janet Van Dyne
-                            and
-                            Cassie Lang explore...</p>
-                    </div>
-                    <div class="popular__movie">
-                        <img src="{{asset('img/movies-posters/ant-man-poster.jpg')}}" alt="" class="popular__poster">
-                        <h2 class="popular__title">Ant-Man and The Wasp: Quantumania</h2>
-                        <p class="popular__description">Ant-Man and the Wasp along with Hank Pym and Janet Van Dyne
-                            and
-                            Cassie Lang explore...</p>
-                    </div>
-                    <div class="popular__movie">
-                        <img src="{{asset('img/movies-posters/ant-man-poster.jpg')}}" alt="" class="popular__poster">
-                        <h2 class="popular__title">Ant-Man and The Wasp: Quantumania</h2>
-                        <p class="popular__description">Ant-Man and the Wasp along with Hank Pym and Janet Van Dyne
-                            and
-                            Cassie Lang explore...</p>
-                    </div>
-                    <div class="popular__movie">
-                        <img src="{{asset('img/movies-posters/ant-man-poster.jpg')}}" alt="" class="popular__poster">
-                        <h2 class="popular__title">Ant-Man and The Wasp: Quantumania</h2>
-                        <p class="popular__description">Ant-Man and the Wasp along with Hank Pym and Janet Van Dyne
-                            and
-                            Cassie Lang explore...</p>
-                    </div>
+                    @endforeach
                 </div>
-
             </div>
+
             <div class="popular__controls">
                 <div class="popular__line"></div>
                 <div class="popular__arrows">

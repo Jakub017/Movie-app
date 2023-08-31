@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PagesController;
+use App\Http\Controllers\MoviesController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,13 +16,6 @@ use App\Http\Controllers\PagesController;
 
 Route::controller(PagesController::class)->group(function(){
     Route::get('/', 'home')->name('home');
-    Route::get('/movie', 'movie')->name('movie');
-    Route::get('/category', 'category')->name('category');
-});
-
-
-
-
-Route::get('/', function () {
-    return view('home');
+    Route::get('/movies/{movie}', 'movie')->name('movie');
+    Route::get('/genre/{genre}', 'genre')->name('genre');
 });

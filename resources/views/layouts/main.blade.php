@@ -12,8 +12,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+
     <title>Document</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 </head>
 
 <body>
@@ -25,7 +28,23 @@
     @include('elements.footer')
 
 </body>
-<script src="{{asset('js/app.js')}}"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 
+<script src="{{asset('js/app.js')}}"></script>
+<script>
+    var swiper = new Swiper(".swiper", {
+        slidesPerView: "auto",
+        slidesPerGroup: 1,
+        spaceBetween: 40,
+        loop: true,
+        // centeredSlides: true,
+
+        navigation: {
+            nextEl: "popular__arrow-wrapper--next",
+            prevEl: "popular__arrow-wrapper--prev",
+        },
+    });
+
+</script>
 
 </html>

@@ -399,21 +399,20 @@ $desktop-body-text: 18px;
         gap: 20px;
         overflow: hidden;
         width: 100%;
-        max-width: 1300px;
+        max-width: 1400px;
         position: relative;
     }
 
     &__movies-container {
         display: flex;
         justify-content: space-between;
-        align-items: center;
-        gap: 40px;
+        align-items: flex-start;
         flex-wrap: nowrap;
         width: fit-content;
     }
 
     &__movie {
-        width: 280px;
+        max-width: 320px;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -427,6 +426,29 @@ $desktop-body-text: 18px;
 
     &__title {
         color: #fff;
+        font-size: 1.8rem;
+        margin-bottom: 0;
+    }
+
+    &__info {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        width: 100%;
+        color: #fff;
+        gap: 10px;
+    }
+
+    &__rating {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 5px;
+
+    }
+
+    &__rating-star {
+        width: 24px;
     }
 
     &__description {
@@ -1493,6 +1515,12 @@ $desktop-body-text: 18px;
         }
     }
 
+    .popular {
+        &__movie {
+            max-width: 300px;
+        }
+    }
+
     .footer {
         &__column {
             width: 22%;
@@ -1607,3 +1635,7 @@ $desktop-body-text: 18px;
         transform: translateY(0);
     }
 }
+
+// .swiper-slide {
+//     width: 280px;
+// }
