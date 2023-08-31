@@ -40,8 +40,8 @@
         // centeredSlides: true,
 
         navigation: {
-            nextEl: "popular__arrow-wrapper--next",
-            prevEl: "popular__arrow-wrapper--prev",
+            nextEl: ".popular__arrow-wrapper--next",
+            prevEl: ".popular__arrow-wrapper--prev",
         },
     });
 

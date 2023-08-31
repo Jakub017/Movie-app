@@ -18,7 +18,7 @@ class PagesController extends Controller
     public function home(){
         $response = Http::get("https://api.themoviedb.org/3/movie/popular?api_key={$this->apiKey}");
         $popularMovies = $response->json()['results'];
-        dump($popularMovies);
+        // dump($popularMovies);
         return view('home', compact('popularMovies'));
     }
 

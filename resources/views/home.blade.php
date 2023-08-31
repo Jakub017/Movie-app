@@ -161,10 +161,10 @@
             <div class="popular__controls">
                 <div class="popular__line"></div>
                 <div class="popular__arrows">
-                    <div class="popular__arrow-wrapper popular__arrow-wrapper--next">
+                    <div class="popular__arrow-wrapper popular__arrow-wrapper--prev">
                         <img class="popular__arrow" src="{{asset('img/arrow-left.png')}}" alt="">
                     </div>
-                    <div class="popular__arrow-wrapper popular__arrow-wrapper--prev">
+                    <div class="popular__arrow-wrapper popular__arrow-wrapper--next">
                         <img class="popular__arrow" src="{{asset('img/arrow-right.png')}}" alt="">
                     </div>
                 </div>
