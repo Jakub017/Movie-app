@@ -11,19 +11,17 @@
             <h2 class="movie-info__title">{{ $movie['title'] }}</h2>
             <div class="movie-info__basic-details">
                 <div class="movie-info__rating">
-                    <img src="{{asset('img/about/favourites-icon.png')}}" alt="" class="movie-info__rating-star"> 65%
+                    <img src="{{asset('img/about/favourites-icon.png')}}" alt="" class="movie-info__rating-star">
+                    {{ $movie['vote_average'] }}
                 </div>
-                <span class="movie-info__length">2h 5m</span>
+                <span class="movie-info__length">{{ $movie['runtime'] }} min</span>
                 <ul class="movie-info__genres">
+                    @foreach ($movie['genres'] as $genre)
                     <li class="movie-info__genre">
-                        <a class="movie-info__genre-link" href="#">Action</a>
+                        <a class="movie-info__genre-link"
+                            href="{{route('category', $genre['id'])}}">{{ $genre['name'] }}</a>
                     </li>
-                    <li class="movie-info__genre">
-                        <a class="movie-info__genre-link" href="#">Adventure</a>
-                    </li>
-                    <li class="movie-info__genre">
-                        <a class="movie-info__genre-link" href="#">Sci-Fi</a>
-                    </li>
+                    @endforeach
                 </ul>
                 <span
                     class="movie-info__release-date">{{ \Carbon\Carbon::parse($movie['release_date'])->format('Y') }}</span>
@@ -36,16 +34,13 @@
         </div>
 
         <div class="movie-info__posters">
-            <h2 class="movie-info__posters-heading">Posters</h2>
-            <div class="movie-info__posters-wrapper">
-                <div class="movie-info__posters-slider">
-                    <img src="{{asset('img/movies-backgrounds/background2.jpg')}}" alt="" class="movie-info__poster">
-                    <img src="{{asset('img/movies-backgrounds/background3.jpg')}}" alt="" class="movie-info__poster">
-                    <img src="{{asset('img/movies-backgrounds/background4.jpg')}}" alt="" class="movie-info__poster">
-                    <img src="{{asset('img/movies-backgrounds/background5.jpg')}}" alt="" class="movie-info__poster">
-                    <img src="{{asset('img/movies-backgrounds/background6.jpg')}}" alt="" class="movie-info__poster">
-                    <img src="{{asset('img/movies-backgrounds/background6.jpg')}}" alt="" class="movie-info__poster">
-                    <img src="{{asset('img/movies-backgrounds/background6.jpg')}}" alt="" class="movie-info__poster">
+            <h2 class="movie-info__posters-heading">Images</h2>
+            <div class="swiper swiper-desktop movie-info__posters-wrapper">
+                <div class="swiper-wrapper movie-info__posters-slider">
+                    @foreach ($posters as $poster)
+                    <img src="{{ 'https://image.tmdb.org/t/p/w500'.$poster['file_path'] }}" alt=""
+                        class="swiper-slide movie-info__poster">
+                    @endforeach
                 </div>
             </div>
         </div>
@@ -59,7 +54,8 @@
     <div class="movie-mobile-info__wrapper">
         <div class="movie-mobile-info__top">
             <div class="movie-mobile-info__rating">
-                <img src="{{asset('img/about/favourites-icon.png')}}" alt="" class="movie-info__rating-star"> 65%
+                <img src="{{asset('img/about/favourites-icon.png')}}" alt="" class="movie-info__rating-star">
+                {{ $movie['vote_average'] }}
             </div>
             <div class="movie-mobile-info__actions">
                 <a href="#" class="movie-mobile-info__action"><img class="movie-mobile-info__action-icon"
@@ -68,49 +64,32 @@
                         src="{{asset('img/bookmark-icon.png')}}" alt=""></a>
             </div>
         </div>
-        <h2 class="movie-mobile-info__title">Ant-Man and The Wasp: Quantumania</h2>
+        <h2 class="movie-mobile-info__title">{{ $movie['title'] }}</h2>
         <div class="movie-mobile-info__details">
-            <span class="movie-mobile-info__length">2h 5m</span>
+            <span class="movie-mobile-info__length">{{ $movie['runtime'] }} min</span>
             <ul class="movie-mobile-info__genres">
+                @foreach ($movie['genres'] as $genre)
                 <li class="movie-mobile-info__genre">
-                    <a class="movie-mobile-info__genre-link" href="#">Action</a>
+                    <a class="movie-mobile-info__genre-link" href="#">{{ $genre['name'] }}</a>
                 </li>
-                <li class="movie-mobile-info__genre">
-                    <a class="movie-mobile-info__genre-link" href="#">Adventure</a>
-                </li>
-                <li class="movie-mobile-info__genre">
-                    <a class="movie-mobile-info__genre-link" href="#">Sci-Fi</a>
-                </li>
+                @endforeach
             </ul>
-            <span class="movie-moile-info__release-date">2023</span>
+            <span
+                class="movie-moile-info__release-date">{{ \Carbon\Carbon::parse($movie['release_date'])->format('Y') }}</span>
         </div>
-        <p class="movie-mobile-info__description">Scott Lang and Hope van Dyne, along with Hope's parents, Janet van
-            Dyne
-            and Hank Pym, and Scott's daughter, Cassie Lang, explore the Quantum Realm, interact with strange new
-            creatures and embark on an adventure that will push them beyond the limits of what they thought
-            possible.</p>
+        <p class="movie-mobile-info__description">{{ $movie['overview'] }}</p>
         <div class="movie-mobile-info__buttons">
             <a href="" class="movie-mobile-info__button movie-mobile-info__button--colored">Watch trailer</a>
             <a href="" class="movie-mobile-info__button">Visit Just Watch</a>
         </div>
         <div class="movie-mobile-info__posters">
-            <h2 class="movie-mobile-info__posters-heading">Posters</h2>
-            <div class="movie-mobile-info__posters-wrapper">
-                <div class="movie-mobile-info__posters-slider">
-                    <img src="{{asset('img/movies-backgrounds/background2.jpg')}}" alt=""
-                        class="movie-mobile-info__poster">
-                    <img src="{{asset('img/movies-backgrounds/background3.jpg')}}" alt=""
-                        class="movie-mobile-info__poster">
-                    <img src="{{asset('img/movies-backgrounds/background4.jpg')}}" alt=""
-                        class="movie-mobile-info__poster">
-                    <img src="{{asset('img/movies-backgrounds/background5.jpg')}}" alt=""
-                        class="movie-mobile-info__poster">
-                    <img src="{{asset('img/movies-backgrounds/background6.jpg')}}" alt=""
-                        class="movie-mobile-info__poster">
-                    <img src="{{asset('img/movies-backgrounds/background6.jpg')}}" alt=""
-                        class="movie-mobile-info__poster">
-                    <img src="{{asset('img/movies-backgrounds/background6.jpg')}}" alt=""
-                        class="movie-mobile-info__poster">
+            <h2 class="movie-mobile-info__posters-heading">Images</h2>
+            <div class="swiper swiper-mobile movie-mobile-info__posters-wrapper">
+                <div class="swiper-wrapper movie-mobile-info__posters-slider">
+                    @foreach ($posters as $poster)
+                    <img src="{{ 'https://image.tmdb.org/t/p/w500'.$poster['file_path'] }}" alt=""
+                        class="swiper-slide movie-mobile-info__poster">
+                    @endforeach
                 </div>
             </div>
         </div>
@@ -186,52 +165,7 @@
                     <h5 class="movie-more__actor-name">Paul Rudd</h5>
                     <span class="movie-more__actor-role">Scott Lang / Ant-Man</span>
                 </div>
-                <div class="movie-more__actor">
-                    <img src="{{asset('img/actors-images/actor-6.jpg')}}" alt="" class="movie-more__actor-photo">
-                    <h5 class="movie-more__actor-name">Evangeline Lilly</h5>
-                    <span class="movie-more__actor-role">Hope van Dyne / The Wasp</span>
-                </div>
-                <div class="movie-more__actor">
-                    <img src="{{asset('img/actors-images/actor-7.jpg')}}" alt="" class="movie-more__actor-photo">
-                    <h5 class="movie-more__actor-name">Jonathan Majors</h5>
-                    <span class="movie-more__actor-role">Kang the Conqueror
-                    </span>
-                </div>
-                <div class="movie-more__actor">
-                    <img src="{{asset('img/actors-images/actor-8.jpg')}}" alt="" class="movie-more__actor-photo">
-                    <h5 class="movie-more__actor-name">Kathryn Newton</h5>
-                    <span class="movie-more__actor-role">Cassie Lang
-                    </span>
-                </div>
-                <div class="movie-more__actor">
-                    <img src="{{asset('img/actors-images/actor-9.jpg')}}" alt="" class="movie-more__actor-photo">
-                    <h5 class="movie-more__actor-name">Michelle Pfeiffer</h5>
-                    <span class="movie-more__actor-role">Janet van Dyne
-                    </span>
-                </div>
-                <div class="movie-more__actor">
-                    <img src="{{asset('img/actors-images/actor-10.jpg')}}" alt="" class="movie-more__actor-photo">
-                    <h5 class="movie-more__actor-name">Michael Douglas</h5>
-                    <span class="movie-more__actor-role">Dr. Hank Pym
-                    </span>
-                </div>
-                <div class="movie-more__actor">
-                    <img src="{{asset('img/actors-images/actor-2.jpg')}}" alt="" class="movie-more__actor-photo">
-                    <h5 class="movie-more__actor-name">Corey Stoll</h5>
-                    <span class="movie-more__actor-role">M.O.D.O.K.
-                    </span>
-                </div>
-                <div class="movie-more__actor">
-                    <img src="{{asset('img/actors-images/actor-3.jpg')}}" alt="" class="movie-more__actor-photo">
-                    <h5 class="movie-more__actor-name">Bill Murray</h5>
-                    <span class="movie-more__actor-role">Lord Krylar
-                    </span>
-                </div>
-                <div class="movie-more__actor">
-                    <img src="{{asset('img/actors-images/actor-4.jpg')}}" alt="" class="movie-more__actor-photo">
-                    <h5 class="movie-more__actor-name">William Jackson Harper</h5>
-                    <span class="movie-more__actor-role">Quaz</span>
-                </div>
+
                 <div class="movie-more__actor movie-more__actor--more">
                     <div class="movie-more__actor-more">
                         <img class="movie-more__actor-more-icon" src="{{asset('img/dots-icon.png')}}" alt="">

@@ -37,7 +37,33 @@
         slidesPerGroup: 1,
         spaceBetween: 40,
         loop: true,
-        // centeredSlides: true,
+        grabCursor: true,
+
+        navigation: {
+            nextEl: ".popular__arrow-wrapper--next",
+            prevEl: ".popular__arrow-wrapper--prev",
+        },
+    });
+
+    var swiper2 = new Swiper(".swiper-desktop", {
+        slidesPerView: "auto",
+        slidesPerGroup: 1,
+        spaceBetween: 20,
+        loop: true,
+        grabCursor: true,
+
+        navigation: {
+            nextEl: ".popular__arrow-wrapper--next",
+            prevEl: ".popular__arrow-wrapper--prev",
+        },
+    });
+
+    var swiper3 = new Swiper(".swiper-mobile", {
+        slidesPerView: "auto",
+        slidesPerGroup: 1,
+        spaceBetween: 20,
+        loop: true,
+        grabCursor: true,
 
         navigation: {
             nextEl: ".popular__arrow-wrapper--next",

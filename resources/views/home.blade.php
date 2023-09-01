@@ -46,7 +46,7 @@
                 <div class="genres__text">
                     <h3 class="genres__name">Action</h3>
                     <p class="genres__description">+1300 Movies</p>
-                    <a href="#" class="genres__link">View more</a>
+                    <a href="{{route('category', 28)}}" class="genres__link">View more</a>
                 </div>
             </div>
             <div class="genres__item">
@@ -56,7 +56,7 @@
                 <div class="genres__text">
                     <h3 class="genres__name">Fantasy</h3>
                     <p class="genres__description">+1300 Movies</p>
-                    <a href="#" class="genres__link">View more</a>
+                    <a href="{{route('category', 14)}}" class="genres__link">View more</a>
                 </div>
             </div>
             <div class="genres__item">
@@ -66,7 +66,7 @@
                 <div class="genres__text">
                     <h3 class="genres__name">Comedy</h3>
                     <p class="genres__description">+1300 Movies</p>
-                    <a href="#" class="genres__link">View more</a>
+                    <a href="{{route('category', 35)}}" class="genres__link">View more</a>
                 </div>
             </div>
             <div class="genres__item">
@@ -76,7 +76,7 @@
                 <div class="genres__text">
                     <h3 class="genres__name">Drama</h3>
                     <p class="genres__description">+1300 Movies</p>
-                    <a href="#" class="genres__link">View more</a>
+                    <a href="{{route('category', 18)}}" class="genres__link">View more</a>
                 </div>
             </div>
             <div class="genres__item">
@@ -86,7 +86,7 @@
                 <div class="genres__text">
                     <h3 class="genres__name">Mystery</h3>
                     <p class="genres__description">+1300 Movies</p>
-                    <a href="#" class="genres__link">View more</a>
+                    <a href="{{route('category', 9648)}}" class="genres__link">View more</a>
                 </div>
             </div>
             <div class="genres__item">
@@ -96,7 +96,7 @@
                 <div class="genres__text">
                     <h3 class="genres__name">Romance</h3>
                     <p class="genres__description">+1300 Movies</p>
-                    <a href="#" class="genres__link">View more</a>
+                    <a href="{{route('category', 10749)}}" class="genres__link">View more</a>
                 </div>
             </div>
             <div class="genres__item">
@@ -106,7 +106,7 @@
                 <div class="genres__text">
                     <h3 class="genres__name">Horror</h3>
                     <p class="genres__description">+1300 Movies</p>
-                    <a href="#" class="genres__link">View more</a>
+                    <a href="{{route('category', 27)}}" class="genres__link">View more</a>
                 </div>
             </div>
             <div class="genres__item">
@@ -116,7 +116,7 @@
                 <div class="genres__text">
                     <h3 class="genres__name">Thriller</h3>
                     <p class="genres__description">+1300 Movies</p>
-                    <a href="#" class="genres__link">View more</a>
+                    <a href="{{route('category', 53)}}" class="genres__link">View more</a>
                 </div>
             </div>
         </div>
@@ -132,16 +132,15 @@
             </h3>
         </div>
         <div class="popular__wrapper">
-
-
             <div class="swiper popular__movies">
                 <div class="swiper-wrapper popular__movies-container">
                     @foreach($popularMovies as $popularMovie)
-                    <a href="{{route('movie', $popularMovie['id'])}}" class="swiper-slide popular__movie">
-
-                        <img src="{{ 'https://image.tmdb.org/t/p/w500'.$popularMovie['poster_path'] }}"
-                            alt="{{ $popularMovie['title'] }}" class="popular__poster">
-                        <h2 class="popular__title">{{ $popularMovie['title'] }}</h2>
+                    <div class="swiper-slide popular__movie">
+                        <a class="popular__link" href="{{route('movie', $popularMovie['id'])}}">
+                            <img src="{{ 'https://image.tmdb.org/t/p/w500'.$popularMovie['poster_path'] }}"
+                                alt="{{ $popularMovie['title'] }}" class="popular__poster">
+                            <h2 class="popular__title">{{ $popularMovie['title'] }}</h2>
+                        </a>
                         <div class="popular__info">
                             <span class="popular__rating"><img class="popular__rating-star"
                                     src="{{asset('img/red_star.png')}}"
@@ -153,7 +152,7 @@
                         <p class="popular__description">
                             {{Illuminate\Support\Str::limit($popularMovie['overview'], 120)  }}
                         </p>
-                    </a>
+                    </div>
                     @endforeach
                 </div>
             </div>
