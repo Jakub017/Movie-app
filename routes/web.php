@@ -16,6 +16,6 @@ use App\Http\Controllers\MoviesController;
 
 Route::controller(PagesController::class)->group(function(){
     Route::get('/', 'home')->name('home');
-    Route::get('/movies/{movie}', 'movie')->name('movie');
+    Route::get('/movie/{movie}', 'movie')->name('movie');
     Route::get('/genre/{genre}', 'genre')->name('genre');
 });

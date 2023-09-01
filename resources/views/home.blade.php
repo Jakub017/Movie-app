@@ -137,7 +137,7 @@
             <div class="swiper popular__movies">
                 <div class="swiper-wrapper popular__movies-container">
                     @foreach($popularMovies as $popularMovie)
-                    <div class="swiper-slide popular__movie">
+                    <a href="{{route('movie', $popularMovie['id'])}}" class="swiper-slide popular__movie">
 
                         <img src="{{ 'https://image.tmdb.org/t/p/w500'.$popularMovie['poster_path'] }}"
                             alt="{{ $popularMovie['title'] }}" class="popular__poster">
@@ -153,7 +153,7 @@
                         <p class="popular__description">
                             {{Illuminate\Support\Str::limit($popularMovie['overview'], 120)  }}
                         </p>
-                    </div>
+                    </a>
                     @endforeach
                 </div>
             </div>

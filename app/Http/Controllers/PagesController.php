@@ -18,12 +18,14 @@ class PagesController extends Controller
     public function home(){
         $response = Http::get("https://api.themoviedb.org/3/movie/popular?api_key={$this->apiKey}");
         $popularMovies = $response->json()['results'];
-        // dump($popularMovies);
         return view('home', compact('popularMovies'));
     }
 
-    public function movie(){
-        return view('movie');
+    public function movie($movieId){
+        $response = Http::get("https://api.themoviedb.org/3/movie/$movieId?api_key={$this->apiKey}");
+        $movie = $response->json();
+        // dump($movie);
+        return view('movie', compact('movie'));
     }
 
     public function category(){

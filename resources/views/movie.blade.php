@@ -4,10 +4,11 @@
 
 @section('content')
 
-<section class="movie-info" style="background-image: url('img/movies-backgrounds/background1.jpg')">
+<section class="movie-info"
+    style="background-image: url({{ 'https://image.tmdb.org/t/p/original'.$movie['backdrop_path'] }})">
     <div class="movie-info__wrapper">
         <div class="movie-info__details">
-            <h2 class="movie-info__title">Ant-Man and The Wasp: Quantumania</h2>
+            <h2 class="movie-info__title">{{ $movie['title'] }}</h2>
             <div class="movie-info__basic-details">
                 <div class="movie-info__rating">
                     <img src="{{asset('img/about/favourites-icon.png')}}" alt="" class="movie-info__rating-star"> 65%
@@ -24,12 +25,10 @@
                         <a class="movie-info__genre-link" href="#">Sci-Fi</a>
                     </li>
                 </ul>
-                <span class="movie-info__release-date">2023</span>
+                <span
+                    class="movie-info__release-date">{{ \Carbon\Carbon::parse($movie['release_date'])->format('Y') }}</span>
             </div>
-            <p class="movie-info__description">Scott Lang and Hope van Dyne, along with Hope's parents, Janet van Dyne
-                and Hank Pym, and Scott's daughter, Cassie Lang, explore the Quantum Realm, interact with strange new
-                creatures and embark on an adventure that will push them beyond the limits of what they thought
-                possible.</p>
+            <p class="movie-info__description">{{ $movie['overview'] }}</p>
             <div class="movie-info__buttons">
                 <a href="" class="movie-info__button movie-info__button--colored">Watch trailer</a>
                 <a href="" class="movie-info__button">Visit Just Watch</a>
@@ -53,7 +52,8 @@
 
     </div>
 </section>
-<section class="movie-mobile-background" style="background-image: url('img/movies-backgrounds/background1.jpg')">
+<section class="movie-mobile-background"
+    style="background-image: url({{ 'https://image.tmdb.org/t/p/original'.$movie['backdrop_path'] }})">
 </section>
 <div class="movie-mobile-info">
     <div class="movie-mobile-info__wrapper">

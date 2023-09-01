@@ -471,7 +471,7 @@ $desktop-body-text: 18px;
 
     &__arrows {
         display: flex;
-        justify-content: center;
+        justify-content: flex-end;
         align-items: center;
         gap: 20px;
         width: 100%;
