@@ -1,6 +1,5 @@
 <footer class="footer">
     <div class="footer__wrapper">
-
         <div class="footer__column">
             <h3 class="footer__heading">Quick menu</h3>
             <ul class="footer__list">
@@ -24,9 +23,13 @@
         <div class="footer__column">
             <h3 class="footer__heading">Information</h3>
             <ul class="footer__list">
-                <li class="footer__item"><a href="#" class="footer__link">API</a></li>
-                <li class="footer__item"><a href="#" class="footer__link">Github Repo</a></li>
-                <li class="footer__item"><a href="#" class="footer__link">Author</a></li>
+                <li class="footer__item"><a href="https://www.themoviedb.org/" target="_blank" class="footer__link">TMDB
+                        API</a></li>
+                <li class="footer__item"><a href="https://github.com/Jakub017/Movie-app" target="_blank"
+                        class="footer__link">Github
+                        Repo</a></li>
+                <li class="footer__item"><a href="https://lipinskijakub.pl/" target="_blank"
+                        class="footer__link">Author</a></li>
             </ul>
         </div>
         <div class="footer__column">

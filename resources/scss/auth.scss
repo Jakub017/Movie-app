@@ -1,0 +1,23 @@
+$primary-font: 'Poppins',
+sans-serif;
+$dark-black: #131212;
+$primary-color: #161616;
+$light-black: #1f1e1e;
+$primary-red: #DF3A3A;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: $primary-font;
+}
+
+$mobile-big-heading-text: 48px;
+$mobile-heading-text: 36px;
+$mobile-subtitle-text: 18px;
+$mobile-body-text: 16px;
+
+$desktop-big-heading-text: 76px;
+$desktop-heading-text: 52px;
+$desktop-subtitle-text: 22px;
+$desktop-body-text: 18px;

@@ -646,16 +646,49 @@ $desktop-body-text: 18px;
         padding-top: 20px;
         text-align: center;
         color: #fff;
-
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
     }
 
     &__author-link {
         color: $primary-red;
         text-decoration: none;
+        position: relative;
+        overflow: hidden;
+        display: inline-block;
+
+        &::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: -100%;
+            width: 100%;
+            height: 1px;
+            transition: 0.2s ease-in-out;
+            background-color: $primary-red;
+        }
+
+        &:hover {
+            color: $primary-red;
+        }
+
+        &:hover::before {
+            left: 0;
+        }
     }
 
     &__icon {
         width: 20px;
+    }
+
+    &__link {
+        transition: 0.2s ease-in-out;
+
+        &:hover {
+            color: $primary-red;
+        }
     }
 }
 

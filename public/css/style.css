@@ -529,13 +529,42 @@
   padding-top: 20px;
   text-align: center;
   color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
 }
 .footer__author-link {
   color: #DF3A3A;
   text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+.footer__author-link::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: -100%;
+  width: 100%;
+  height: 1px;
+  transition: 0.2s ease-in-out;
+  background-color: #DF3A3A;
+}
+.footer__author-link:hover {
+  color: #DF3A3A;
+}
+.footer__author-link:hover::before {
+  left: 0;
 }
 .footer__icon {
   width: 20px;
+}
+.footer__link {
+  transition: 0.2s ease-in-out;
+}
+.footer__link:hover {
+  color: #DF3A3A;
 }
 
 .movie-info {
