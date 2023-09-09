@@ -2,7 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PagesController;
-use App\Http\Controllers\MoviesController;
+use App\Http\Controllers\ProfileController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,8 +15,20 @@ use App\Http\Controllers\MoviesController;
 |
 */
 
-Route::controller(PagesController::class)->group(function(){
+Route::controller(PagesController::class)->group(function() {
     Route::get('/', 'home')->name('home');
-    Route::get('/movie/{movie}', 'movie')->name('movie');
-    Route::get('/category/{category}', 'category')->name('category');
+    Route::get('/movie/{movieId}', 'movie')->name('movie');
+    Route::get('/category/{categoryId}', 'category')->name('category');
 });
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
+
+require __DIR__.'/auth.php';
