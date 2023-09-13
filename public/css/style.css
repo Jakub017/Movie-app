@@ -1243,10 +1243,6 @@
     position: absolute;
     top: 50%;
     right: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 15px;
     list-style: none;
     margin-bottom: 0;
     height: 100%;

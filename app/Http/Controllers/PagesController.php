@@ -48,7 +48,7 @@ class PagesController extends Controller
 
     public function category($categoryId){
         $movies = Http::get("https://api.themoviedb.org/3/discover/movie?api_key={$this->apiKey}&with_genres=$categoryId")->json()['results'];
-        dump($movies);
+        // dump($movies);
 
         return view('category', compact('movies'));
     }

@@ -14,7 +14,7 @@
         rel="stylesheet">
 
     <title>Document</title>
-
+    <script src="https://kit.fontawesome.com/80916011c5.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 </head>
