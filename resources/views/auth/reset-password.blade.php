@@ -1,39 +1,41 @@
-<x-guest-layout>
-    <form method="POST" action="{{ route('password.store') }}">
+@extends('layouts.auth')
+
+@section('title', 'Login - Movie App')
+
+
+@section('content')
+<div class="auth__form-wrapper auth__form-wrapper--forgot">
+    <div class="auth__logo-wrapper">
+        <img src="{{asset('img/logo-white.png')}}" alt="" class="auth__logo">
+    </div>
+    <h2 class="auth__heading">New password</h2>
+    <p class="auth__text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vero atque magni maxime, aliquam
+        eius odit.</p>
+    <form method="POST" action="{{ route('password.store') }}" class="auth__form">
         @csrf
 
         <!-- Password Reset Token -->
         <input type="hidden" name="token" value="{{ $request->route('token') }}">
 
-        <!-- Email Address -->
-        <div>
-            <x-input-label for="email" :value="__('Email')" />
-            <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email', $request->email)" required autofocus autocomplete="username" />
-            <x-input-error :messages="$errors->get('email')" class="mt-2" />
+        <x-auth-session-status class="mb-4" :status="session('status')" />
+        <div class="auth__form-group">
+            <input value="{{ old('email', $request->email) }}" type="email" name="email" class="auth__form-input"
+                placeholder="Email Address">
         </div>
 
-        <!-- Password -->
-        <div class="mt-4">
-            <x-input-label for="password" :value="__('Password')" />
-            <x-text-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="new-password" />
-            <x-input-error :messages="$errors->get('password')" class="mt-2" />
+        <div class="auth__form-group">
+            <input type="password" name="password" class="auth__form-input" placeholder="New password">
         </div>
 
-        <!-- Confirm Password -->
-        <div class="mt-4">
-            <x-input-label for="password_confirmation" :value="__('Confirm Password')" />
-
-            <x-text-input id="password_confirmation" class="block mt-1 w-full"
-                                type="password"
-                                name="password_confirmation" required autocomplete="new-password" />
-
-            <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
+        <div class="auth__form-group">
+            <input type="password" name="password_confirmation" class="auth__form-input"
+                placeholder="Password confirmation">
         </div>
 
-        <div class="flex items-center justify-end mt-4">
-            <x-primary-button>
-                {{ __('Reset Password') }}
-            </x-primary-button>
-        </div>
+        <button class="auth__submit">Reset password</button>
     </form>
-</x-guest-layout>
+</div>
+<!-- <div class="auth__slider">
+    <img src="{{asset('img/auth.png')}}" alt="" class="auth__image">
+</div> -->
+@endsection

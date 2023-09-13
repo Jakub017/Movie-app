@@ -1,25 +1,28 @@
-<x-guest-layout>
-    <div class="mb-4 text-sm text-gray-600 dark:text-gray-400">
-        {{ __('Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.') }}
+@extends('layouts.auth')
+
+@section('title', 'Login - Movie App')
+
+
+@section('content')
+<div class="auth__form-wrapper auth__form-wrapper--forgot">
+    <div class="auth__logo-wrapper">
+        <img src="{{asset('img/logo-white.png')}}" alt="" class="auth__logo">
     </div>
-
-    <!-- Session Status -->
-    <x-auth-session-status class="mb-4" :status="session('status')" />
-
-    <form method="POST" action="{{ route('password.email') }}">
+    <h2 class="auth__heading">Password recovery</h2>
+    <p class="auth__text">{{ __('Forgot your password? No problem. Just let us know your email address and we will email
+        you a password
+        reset link that will allow you to choose a new one.') }}</p>
+    <form method="POST" action="{{ route('password.email') }}" class="auth__form">
         @csrf
-
-        <!-- Email Address -->
-        <div>
-            <x-input-label for="email" :value="__('Email')" />
-            <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus />
-            <x-input-error :messages="$errors->get('email')" class="mt-2" />
+        <x-auth-session-status class="mb-4" :status="session('status')" />
+        <div class="auth__form-group">
+            <input type="email" name="email" class="auth__form-input" placeholder="Email Address">
         </div>
 
-        <div class="flex items-center justify-end mt-4">
-            <x-primary-button>
-                {{ __('Email Password Reset Link') }}
-            </x-primary-button>
-        </div>
+        <button class="auth__submit">Send recovery link</button>
     </form>
-</x-guest-layout>
+</div>
+<!-- <div class="auth__slider">
+    <img src="{{asset('img/auth.png')}}" alt="" class="auth__image">
+</div> -->
+@endsection

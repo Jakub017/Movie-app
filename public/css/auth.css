@@ -54,6 +54,9 @@
 }
 .auth__form-group {
   width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .auth__form-input {
   width: 100%;
@@ -67,6 +70,18 @@
 }
 .auth__form-input:focus {
   border-color: #DF3A3A;
+}
+.auth__forgot {
+  color: #ccc;
+  text-decoration: none;
+  transition: 0.2s ease-in-out;
+  font-size: 16px;
+}
+.auth__forgot:hover {
+  color: #DF3A3A;
+}
+.auth__remember-text {
+  color: #ccc;
 }
 .auth__submit {
   color: #fff;
@@ -141,15 +156,16 @@
   .auth__text {
     font-size: 18px;
   }
-  .auth__form-wrapper {
-    padding: 40px 80px;
-  }
   .auth__logo {
     width: 210px;
     margin-left: -18px;
   }
   .auth__form-wrapper {
     max-width: 50%;
+    padding: 40px 80px;
+  }
+  .auth__form-wrapper--forgot {
+    max-width: 800px;
   }
   .auth__slider {
     display: block;

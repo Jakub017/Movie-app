@@ -46,6 +46,8 @@ $desktop-body-text: 18px;
         align-items: flex-start;
         height: fit-content;
         margin: 0 auto;
+
+
     }
 
     &__heading {
@@ -77,6 +79,9 @@ $desktop-body-text: 18px;
 
     &__form-group {
         width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
     }
 
     &__form-input {
@@ -92,6 +97,21 @@ $desktop-body-text: 18px;
         &:focus {
             border-color: $primary-red;
         }
+    }
+
+    &__forgot {
+        color: #ccc;
+        text-decoration: none;
+        transition: 0.2s ease-in-out;
+        font-size: 16px;
+
+        &:hover {
+            color: $primary-red;
+        }
+    }
+
+    &__remember-text {
+        color: #ccc;
     }
 
     &__submit {
@@ -182,9 +202,6 @@ $desktop-body-text: 18px;
             font-size: 18px;
         }
 
-        &__form-wrapper {
-            padding: 40px 80px;
-        }
 
         &__logo {
             width: 210px;
@@ -193,6 +210,11 @@ $desktop-body-text: 18px;
 
         &__form-wrapper {
             max-width: 50%;
+            padding: 40px 80px;
+
+            &--forgot {
+                max-width: 800px;
+            }
         }
 
         &__slider {
