@@ -38,7 +38,6 @@ class PagesController extends Controller
     public function category($categoryId){
         $movies = Http::get("https://api.themoviedb.org/3/discover/movie?api_key={$this->apiKey}&with_genres=$categoryId")->json()['results'];
         $genres = Http::get("https://api.themoviedb.org/3/genre/movie/list?api_key={$this->apiKey}")->json()['genres'];
-        // $genres = Http::get("https://api.themoviedb.org/3/genre/$categoryId?api_key={$this->apiKey}")->json();2
         foreach($genres as $genre) {
             if($genre['id'] == $categoryId) {
                 $categoryName = $genre['name'];

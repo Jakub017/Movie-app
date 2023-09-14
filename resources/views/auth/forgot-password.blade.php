@@ -16,6 +16,7 @@
         @csrf
         <x-auth-session-status class="mb-4" :status="session('status')" />
         <div class="auth__form-group">
+            <i class="auth__icon fa-solid fa-envelope"></i>
             <input type="email" name="email" class="auth__form-input" placeholder="Email Address">
         </div>
 

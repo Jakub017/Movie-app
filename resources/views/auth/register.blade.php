@@ -14,15 +14,19 @@
         @csrf
         <!-- <x-auth-session-status class="mb-4" :status="session('status')" /> -->
         <div class="auth__form-group">
+            <i class="auth__icon fa-solid fa-user"></i>
             <input type="text" name="name" class="auth__form-input" placeholder="Your name">
         </div>
         <div class="auth__form-group">
+            <i class="auth__icon fa-solid fa-envelope"></i>
             <input type="email" name="email" class="auth__form-input" placeholder="Email Address">
         </div>
         <div class="auth__form-group">
+            <i class="auth__icon fa-solid fa-key"></i>
             <input type="password" name="password" class="auth__form-input" placeholder="Password">
         </div>
         <div class="auth__form-group">
+            <i class="auth__icon fa-solid fa-key"></i>
             <input type="password" name="password_confirmation" class="auth__form-input" placeholder="Repeat password">
         </div>
         <button type="submit" class="auth__submit">Register</button>
@@ -35,7 +39,7 @@
     </p>
 </div>
 <div class="auth__slider">
-    <img src="{{asset('img/auth2.jpg')}}" alt="" class="auth__image">
+    <img src="{{asset('img/auth.png')}}" alt="" class="auth__image">
     <div class="auth__info">
         <h3 class="auth__info-heading">Lorem Ipsum</h3>
         <p class="auth__info-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde odio sapiente quo,

@@ -19,15 +19,18 @@
 
         <x-auth-session-status class="mb-4" :status="session('status')" />
         <div class="auth__form-group">
+            <i class="auth__icon fa-solid fa-envelope"></i>
             <input value="{{ old('email', $request->email) }}" type="email" name="email" class="auth__form-input"
                 placeholder="Email Address">
         </div>
 
         <div class="auth__form-group">
+            <i class="auth__icon fa-solid fa-key"></i>
             <input type="password" name="password" class="auth__form-input" placeholder="New password">
         </div>
 
         <div class="auth__form-group">
+            <i class="auth__icon fa-solid fa-key"></i>
             <input type="password" name="password_confirmation" class="auth__form-input"
                 placeholder="Password confirmation">
         </div>

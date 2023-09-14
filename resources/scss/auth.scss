@@ -32,7 +32,6 @@ $desktop-body-text: 18px;
     justify-content: space-between;
     align-items: center;
     min-height: 100vh;
-    // padding: 20px;
     background-color: $dark-black;
     gap: 30px;
 
@@ -46,15 +45,12 @@ $desktop-body-text: 18px;
         align-items: flex-start;
         height: fit-content;
         margin: 0 auto;
-
-
     }
 
     &__heading {
         font-size: $mobile-heading-text;
         color: #fff;
         line-height: 1.5;
-        // font-weight: 500;
     }
 
     &__text {
@@ -82,6 +78,7 @@ $desktop-body-text: 18px;
         display: flex;
         justify-content: space-between;
         align-items: center;
+        position: relative;
     }
 
     &__form-input {
@@ -93,10 +90,20 @@ $desktop-body-text: 18px;
         border: none;
         border: 2px solid transparent;
         transition: 0.2s ease-in-out;
+        padding-left: 37px;
 
         &:focus {
             border-color: $primary-red;
         }
+    }
+
+    &__icon {
+        position: absolute;
+        top: 50%;
+        left: 10px;
+        color: $primary-color;
+        font-size: 20px;
+        transform: translateY(-50%);
     }
 
     &__forgot {
@@ -145,7 +152,6 @@ $desktop-body-text: 18px;
         background-color: $dark-black;
         display: block;
         width: fit-content;
-        // padding: 10px;
         padding-left: 10px;
         padding-right: 10px;
         color: #ccc;
@@ -167,7 +173,7 @@ $desktop-body-text: 18px;
         }
     }
 
-    &__icon {
+    &__google-icon {
         font-size: 16px;
         margin-right: 3px;
     }
