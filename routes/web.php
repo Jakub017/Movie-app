@@ -19,6 +19,7 @@ Route::controller(PagesController::class)->group(function() {
     Route::get('/', 'home')->name('home');
     Route::get('/movie/{movieId}', 'movie')->name('movie');
     Route::get('/category/{categoryId}', 'category')->name('category');
+    Route::get('/search', 'search')->name('search');
 });
 
 Route::get('/dashboard', function () {

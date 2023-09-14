@@ -31,7 +31,6 @@ class PagesController extends Controller
             return $actor['profile_path'] !== null;
         });
 
-
         return view('movie', compact('movie', 'posters', 'similarMovies', 'videos', 'actors'));
     }
 
@@ -44,5 +43,10 @@ class PagesController extends Controller
             }
         }
         return view('category', compact('movies', 'categoryName'));
+    }
+
+    public function search() {
+        // $results = Http::get("https://api.themoviedb.org/3/search/movie?query=$query&api_key={$this->apiKey}")->json();
+        return view('search');
     }
 }

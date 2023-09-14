@@ -183,12 +183,32 @@ $desktop-body-text: 18px;
         color: #ccc;
         font-size: 16px;
         width: 100%;
+        overflow: hidden;
     }
 
     &__link {
         color: $primary-red;
         font-size: 16px;
         text-decoration: none;
+        position: relative;
+        overflow: hidden;
+        transition: 0.2s ease-in-out;
+
+
+        // &::after {
+        //     content: "";
+        //     position: absolute;
+        //     bottom: -2px;
+        //     left: -100%;
+        //     width: 100%;
+        //     height: 2px;
+        //     background-color: $primary-red;
+        //     transition: 0.2s ease-in-out;
+        // }
+
+        // &:hover::after {
+        //     left: 0;
+        // }
     }
 
     &__slider {
