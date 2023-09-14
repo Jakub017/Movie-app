@@ -143,14 +143,14 @@
                         </a>
                         <div class="popular__info">
                             <span class="popular__rating"><img class="popular__rating-star"
-                                    src="{{asset('img/red_star.png')}}"
-                                    alt="">{{ $popularMovie['vote_average'] }}</span>
+                                    src="{{asset('img/red_star.png')}}" alt="">{{ $popularMovie['vote_average']
+                                }}</span>
                             <span>|</span>
-                            <span
-                                class="popular__year">{{ \Carbon\Carbon::parse($popularMovie['release_date'])->format('d.m.Y') }}</span>
+                            <span class="popular__year">{{
+                                \Carbon\Carbon::parse($popularMovie['release_date'])->format('d.m.Y') }}</span>
                         </div>
                         <p class="popular__description">
-                            {{Illuminate\Support\Str::limit($popularMovie['overview'], 120)  }}
+                            {{Illuminate\Support\Str::limit($popularMovie['overview'], 120) }}
                         </p>
                     </div>
                     @endforeach

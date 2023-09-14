@@ -29,8 +29,29 @@
             @auth
             <li class="nav__icons-menu-item nav__icons-menu-item--auth">
                 <i class="nav__icons-menu-icon fa-regular fa-user"></i>
-                <span class="nav__icons-menu-login">{{ Auth::user()->name }} <i
-                        class="fa-solid fa-chevron-down"></i></span>
+                <span class="nav__icons-menu-login">{{ Auth::user()->name }}</span>
+                <div class="nav__arrow-link">
+                    <i class="nav__profile-arrow fa-solid fa-chevron-down"></i>
+                </div>
+                <ul class="nav__profile-list">
+                    <li class="nav__profile-item">
+                        <a href="#" class="nav__profile-link"><i class="fa-solid fa-user"></i> Profile</a>
+                    </li>
+                    <li class="nav__profile-item">
+                        <a href="#" class="nav__profile-link"><i class="fa-regular fa-clock"></i> Watchlist</a>
+                    </li>
+                    <li class="nav__profile-item">
+                        <a href="#" class="nav__profile-link"><i class="fa-solid fa-heart"></i> Favourites</a>
+                    </li>
+                    <li class="nav__profile-item">
+                        <form method="POST" action="{{route('logout')}}">
+                            @csrf
+                            <button type="submit" class="nav__profile-link"><i
+                                    class="fa-solid fa-arrow-right-from-bracket"></i>
+                                Logout</button>
+                        </form>
+                    </li>
+                </ul>
             </li>
             @else
             <li class="nav__icons-menu-item">
