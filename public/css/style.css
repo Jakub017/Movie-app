@@ -1296,8 +1296,49 @@
   transform: translateY(-50%);
   color: #fff;
 }
+.search__wrapper {
+  width: 90%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 40px 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.search__movie {
+  width: 100%;
+  max-width: 250px;
+}
+.search__movie-link {
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 10px;
+}
+.search__movie-link:hover .search__movie-title {
+  color: #DF3A3A;
+}
+.search__movie-image {
+  width: 100%;
+  border-radius: 10px;
+  max-height: 140px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.search__movie-title {
+  font-size: 24px;
+  color: #fff;
+  transition: 0.3s ease-in-out;
+}
 
 @media (min-width: 768px) {
+  .search__wrapper {
+    justify-content: space-between;
+  }
   .movie-more__wrapper {
     flex-direction: row;
     align-items: flex-start;

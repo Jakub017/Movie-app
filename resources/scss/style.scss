@@ -1527,10 +1527,59 @@ $desktop-body-text: 18px;
         transform: translateY(-50%);
         color: #fff;
     }
+
+    &__wrapper {
+        width: 90%;
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 40px 0;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    &__movie {
+        width: 100%;
+        max-width: 250px;
+    }
+
+    &__movie-link {
+        text-decoration: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    &__movie-link:hover &__movie-title {
+        color: $primary-red;
+    }
+
+    &__movie-image {
+        width: 100%;
+        border-radius: 10px;
+        max-height: 140px;
+        object-fit: cover;
+    }
+
+    &__movie-title {
+        font-size: 24px;
+        color: #fff;
+        transition: 0.3s ease-in-out;
+    }
 }
 
 // Media Queries
 @media(min-width: 768px) {
+
+    .search {
+        &__wrapper {
+            justify-content: space-between;
+        }
+    }
 
     .movie-more {
         &__wrapper {
