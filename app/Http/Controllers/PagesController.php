@@ -19,17 +19,6 @@ class PagesController extends Controller
         $response = Http::get("https://api.themoviedb.org/3/movie/popular?api_key={$this->apiKey}");
         $popularMovies = $response->json()['results'];
         return view('home', compact('popularMovies'));
-
-        /*
-            Action - 28
-            Fantasy - 14
-            Comedy - 35
-            Drama - 18
-            Mystery - 9648
-            Romance - 10749
-            Thriller - 53
-            Horror - 27
-        */
     }
 
     public function movie($movieId){
@@ -48,8 +37,13 @@ class PagesController extends Controller
 
     public function category($categoryId){
         $movies = Http::get("https://api.themoviedb.org/3/discover/movie?api_key={$this->apiKey}&with_genres=$categoryId")->json()['results'];
-        // dump($movies);
-
-        return view('category', compact('movies'));
+        $genres = Http::get("https://api.themoviedb.org/3/genre/movie/list?api_key={$this->apiKey}")->json()['genres'];
+        // $genres = Http::get("https://api.themoviedb.org/3/genre/$categoryId?api_key={$this->apiKey}")->json();2
+        foreach($genres as $genre) {
+            if($genre['id'] == $categoryId) {
+                $categoryName = $genre['name'];
+            }
+        }
+        return view('category', compact('movies', 'categoryName'));
     }
 }

@@ -41,6 +41,7 @@
     </div>
 
     <p class="footer__author">Made with <img class="footer__icon" src="{{asset('img/heart-icon.png')}}" alt=""> by
-        <a class="footer__author-link" href="#">Jakub Lipiński</a></p>
+        <a class="footer__author-link" href="https://lipinskijakub.pl/" target="_blank">Jakub Lipiński</a>
+    </p>
 
 </footer>
