@@ -579,6 +579,9 @@
   color: #fff;
   text-align: center;
 }
+.testimonials__name {
+  margin-bottom: 0;
+}
 .testimonials__quote {
   position: relative;
 }

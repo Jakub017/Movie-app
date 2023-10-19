@@ -686,6 +686,10 @@ $desktop-body-text: 18px;
         text-align: center;
     }
 
+    &__name {
+        margin-bottom: 0;
+    }
+
     &__quote {
         position: relative;
 

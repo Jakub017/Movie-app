@@ -8,10 +8,9 @@
     <div class="hero__text">
         <h3 class="hero__welcome">Welcome</h3>
         <h1 class="hero__header">Your own movie library</h1>
-        <p class="hero__description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Enim, dolor
-            atque
-            itaque aliquid dolorem
-            consectetur illum aliquam.</p>
+        <p class="hero__description">Discover the magic of cinema in one place. With our app, browse, search and delight
+            in the most thrilling movies from
+            different genres.</p>
         <div class="hero__buttons">
             <a href="" class="hero__button">Popular movies</a>
             <a href="" class="hero__button hero__button--colored">About this app</a>
@@ -42,7 +41,7 @@
                 </div>
                 <div class="genres__text">
                     <h3 class="genres__name">Action</h3>
-                    <p class="genres__description">+1300 Movies</p>
+                    <p class="genres__description">Fast Frenzy</p>
                     <a href="{{route('category', 28)}}" class="genres__link">View more</a>
                 </div>
             </div>
@@ -52,7 +51,7 @@
                 </div>
                 <div class="genres__text">
                     <h3 class="genres__name">Fantasy</h3>
-                    <p class="genres__description">+1300 Movies</p>
+                    <p class="genres__description">Magic kingdoms</p>
                     <a href="{{route('category', 14)}}" class="genres__link">View more</a>
                 </div>
             </div>
@@ -62,7 +61,7 @@
                 </div>
                 <div class="genres__text">
                     <h3 class="genres__name">Comedy</h3>
-                    <p class="genres__description">+1300 Movies</p>
+                    <p class="genres__description">Pure laughter</p>
                     <a href="{{route('category', 35)}}" class="genres__link">View more</a>
                 </div>
             </div>
@@ -72,7 +71,7 @@
                 </div>
                 <div class="genres__text">
                     <h3 class="genres__name">Drama</h3>
-                    <p class="genres__description">+1300 Movies</p>
+                    <p class="genres__description">Deep emotions</p>
                     <a href="{{route('category', 18)}}" class="genres__link">View more</a>
                 </div>
             </div>
@@ -82,7 +81,7 @@
                 </div>
                 <div class="genres__text">
                     <h3 class="genres__name">Mystery</h3>
-                    <p class="genres__description">+1300 Movies</p>
+                    <p class="genres__description">Secrets await</p>
                     <a href="{{route('category', 9648)}}" class="genres__link">View more</a>
                 </div>
             </div>
@@ -92,7 +91,7 @@
                 </div>
                 <div class="genres__text">
                     <h3 class="genres__name">Romance</h3>
-                    <p class="genres__description">+1300 Movies</p>
+                    <p class="genres__description">Love is blooming</p>
                     <a href="{{route('category', 10749)}}" class="genres__link">View more</a>
                 </div>
             </div>
@@ -102,7 +101,7 @@
                 </div>
                 <div class="genres__text">
                     <h3 class="genres__name">Horror</h3>
-                    <p class="genres__description">+1300 Movies</p>
+                    <p class="genres__description">The thrill</p>
                     <a href="{{route('category', 27)}}" class="genres__link">View more</a>
                 </div>
             </div>
@@ -112,7 +111,7 @@
                 </div>
                 <div class="genres__text">
                     <h3 class="genres__name">Thriller</h3>
-                    <p class="genres__description">+1300 Movies</p>
+                    <p class="genres__description">Tension is rising</p>
                     <a href="{{route('category', 53)}}" class="genres__link">View more</a>
                 </div>
             </div>
@@ -125,7 +124,9 @@
         <div class="section__heading">
             <h1 class="section__title">Most popular movies in 2023</h1>
             <h3 class="section__subtitle">
-                We present many films from various main categories, let's chosse and search film you like.
+                Discover the most acclaimed movies of the year and find your next favorite masterpiece. Immerse yourself
+                in the best
+                cinema.
             </h3>
         </div>
         <div class="popular__wrapper">
@@ -174,7 +175,7 @@
         <div class="section__heading">
             <h1 class="section__title">About this app</h1>
             <h3 class="section__subtitle">
-                We present many films from various main categories, let's chosse and search film you like.
+                Embark on a cinematic journey, effortlessly browsing through diverse categories.
             </h3>
         </div>
         <div class="about__wrapper">
@@ -183,9 +184,11 @@
                     <img src="{{asset('img/about/info-icon.png')}}" alt="" class="about__icon">
                 </div>
                 <div class="about__text">
-                    <h3 class="about__title">Lorem Ipsum</h3>
-                    <p class="about__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae
-                        vel fugit alias aspernatur accusantium.</p>
+                    <h3 class="about__title">Browse & Discover</h3>
+                    <p class="about__description">Delve into a vast collection sourced directly from TMDB. Explore both
+                        timeless classics and fresh releases.
+
+                    </p>
                 </div>
             </div>
             <div class="about__item">
@@ -193,9 +196,10 @@
                     <img src="{{asset('img/about/favourites-icon.png')}}" alt="" class="about__icon">
                 </div>
                 <div class="about__text">
-                    <h3 class="about__title">Lorem Ipsum</h3>
-                    <p class="about__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae
-                        vel fugit alias aspernatur accusantium.</p>
+                    <h3 class="about__title">Genre Variety</h3>
+                    <p class="about__description">Explore movies across different genres, ensuring you always find
+                        something that matches your mood.
+                    </p>
                 </div>
             </div>
             <div class="about__item">
@@ -203,9 +207,10 @@
                     <img src="{{asset('img/about/official-icon.png')}}" alt="" class="about__icon">
                 </div>
                 <div class="about__text">
-                    <h3 class="about__title">Lorem Ipsum</h3>
-                    <p class="about__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae
-                        vel fugit alias aspernatur accusantium.</p>
+                    <h3 class="about__title">Your Watchlist</h3>
+                    <p class="about__description">Curate a personalized list of films, adding favorites and tracking
+                        your movie-watching journey.
+                    </p>
                 </div>
             </div>
         </div>
@@ -222,28 +227,32 @@
         </div>
         <div class="testimonials__items">
             <div class="testimonials__item">
-                <span class="testimonials__quote">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Eveniet natus dolorum, ratione numquam quod provident, ipsa ipsam quas fuga reiciendis
-                    veniam dolorem labore ab.</span>
+                <span class="testimonials__quote">This app truly rekindled my love for cinema. I've discovered movies I
+                    wouldn't have known otherwise. A must-have for
+                    every cinephile!</span>
                 <img src="{{asset('img/testimonials/portrait-1.jpg')}}" alt="" class="testimonials__image">
-                <h3 class="testimonials__name">Lorem Ipsum</h3>
-                <span class="testimonials__position">Lorem Ipsum</span>
+                <h3 class="testimonials__name">Miguel Santos
+                </h3>
+                <span class="testimonials__position">Film Critic
+                </span>
             </div>
             <div class="testimonials__item">
-                <span class="testimonials__quote">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Eveniet natus dolorum, ratione numquam quod provident, ipsa ipsam quas fuga reiciendis
-                    veniam dolorem labore ab.</span>
+                <span class="testimonials__quote">Navigating through different genres and curating my watchlist has
+                    never been easier. This app is a game-changer for
+                    movie nights!</span>
                 <img src="{{asset('img/testimonials/portrait-2.jpg')}}" alt="" class="testimonials__image">
-                <h3 class="testimonials__name">Lorem Ipsum</h3>
-                <span class="testimonials__position">Lorem Ipsum</span>
+                <h3 class="testimonials__name">Lukasz Nowak</h3>
+                <span class="testimonials__position">Film Student
+                </span>
             </div>
             <div class="testimonials__item">
-                <span class="testimonials__quote">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Eveniet natus dolorum, ratione numquam quod provident, ipsa ipsam quas fuga reiciendis
-                    veniam dolorem labore ab.</span>
+                <span class="testimonials__quote">From classics to new releases, I'm wowed by the selection.
+                    User-friendly interface, diverse genres, and impeccable
+                    curation.</span>
                 <img src="{{asset('img/testimonials/portrait-3.jpg')}}" alt="" class="testimonials__image">
-                <h3 class="testimonials__name">Lorem Ipsum</h3>
-                <span class="testimonials__position">Lorem Ipsum</span>
+                <h3 class="testimonials__name">Rohan Patel</h3>
+                <span class="testimonials__position">Cinema Enthusiast
+                </span>
             </div>
         </div>
     </div>
