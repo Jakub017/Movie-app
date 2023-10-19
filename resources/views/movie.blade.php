@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('title', 'Home')
+@section('title', 'Movie - Movie App')
 
 @section('content')
 
@@ -18,18 +18,20 @@
                 <ul class="movie-info__genres">
                     @foreach ($movie['genres'] as $genre)
                     <li class="movie-info__genre">
-                        <a class="movie-info__genre-link"
-                            href="{{route('category', $genre['id'])}}">{{ $genre['name'] }}</a>
+                        <a class="movie-info__genre-link" href="{{route('category', $genre['id'])}}">{{ $genre['name']
+                            }}</a>
                     </li>
                     @endforeach
                 </ul>
-                <span
-                    class="movie-info__release-date">{{ \Carbon\Carbon::parse($movie['release_date'])->format('Y') }}</span>
+                <span class="movie-info__release-date">{{ \Carbon\Carbon::parse($movie['release_date'])->format('Y')
+                    }}</span>
             </div>
             <p class="movie-info__description">{{ $movie['overview'] }}</p>
             <div class="movie-info__buttons">
                 <a href="" class="movie-info__button movie-info__button--colored">Watch trailer</a>
                 <a href="" class="movie-info__button">Visit Just Watch</a>
+                <div class="movie-info__spacer"></div>
+                <livewire:desktop-lists :movie="$movie" />
             </div>
         </div>
 
@@ -57,12 +59,7 @@
                 <img src="{{asset('img/about/favourites-icon.png')}}" alt="" class="movie-info__rating-star">
                 {{ $movie['vote_average'] }}
             </div>
-            <div class="movie-mobile-info__actions">
-                <a href="#" class="movie-mobile-info__action"><img class="movie-mobile-info__action-icon"
-                        src="{{asset('img/favourite-icon.png')}}" alt=""></a>
-                <a href="#" class="movie-mobile-info__action"><img class="movie-mobile-info__action-icon"
-                        src="{{asset('img/bookmark-icon.png')}}" alt=""></a>
-            </div>
+            <livewire:mobile-lists :movie="$movie" />
         </div>
         <h2 class="movie-mobile-info__title">{{ $movie['title'] }}</h2>
         <div class="movie-mobile-info__details">
@@ -74,8 +71,8 @@
                 </li>
                 @endforeach
             </ul>
-            <span
-                class="movie-moile-info__release-date">{{ \Carbon\Carbon::parse($movie['release_date'])->format('Y') }}</span>
+            <span class="movie-moile-info__release-date">{{ \Carbon\Carbon::parse($movie['release_date'])->format('Y')
+                }}</span>
         </div>
         <p class="movie-mobile-info__description">{{ $movie['overview'] }}</p>
         <div class="movie-mobile-info__buttons">
@@ -233,5 +230,7 @@
             </div>
         </div>
 </section>
+
+<script src="{{asset('js/movie-icons.js')}}"></script>
 
 @endsection

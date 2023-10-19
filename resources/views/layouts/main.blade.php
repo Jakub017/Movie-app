@@ -13,7 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap"
         rel="stylesheet">
 
-    <title>Document</title>
+    <title>@yield('title')</title>
     <script src="https://kit.fontawesome.com/80916011c5.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
@@ -30,7 +30,7 @@
 </body>
 <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 
-<script src="{{asset('js/app.js')}}"></script>
+<script src="{{asset('js/menu.js')}}"></script>
 <script>
     var swiper = new Swiper(".swiper", {
         slidesPerView: "auto",

@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
+use App\Models\Movie;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Http;
 
 class PagesController extends Controller
@@ -16,8 +19,7 @@ class PagesController extends Controller
     }
 
     public function home(){
-        $response = Http::get("https://api.themoviedb.org/3/movie/popular?api_key={$this->apiKey}");
-        $popularMovies = $response->json()['results'];
+        $popularMovies = Http::get("https://api.themoviedb.org/3/movie/popular?api_key={$this->apiKey}")->json()['results'];
         return view('home', compact('popularMovies'));
     }
 
@@ -46,7 +48,33 @@ class PagesController extends Controller
     }
 
     public function search() {
-        // $results = Http::get("https://api.themoviedb.org/3/search/movie?query=$query&api_key={$this->apiKey}")->json();
         return view('search');
     }
+
+    public function favourites() {
+        $user = User::find(Auth::id());
+        $favourites = $user->favourites()->get();
+        $movies = collect();
+
+        foreach($favourites as $favourite) {
+            $movie = Http::get("https://api.themoviedb.org/3/movie/{$favourite->movie_id}?api_key={$this->apiKey}")->json();
+            $movies->push($movie);
+        }
+
+        return view('favourites', compact('movies'));
+    }
+
+    public function watchlist() {
+        $user = User::find(Auth::id());
+        $watchlists = $user->watchlists()->get();
+        $movies = collect();
+
+        foreach($watchlists as $watchlist) {
+            $movie = Http::get("https://api.themoviedb.org/3/movie/{$watchlist->movie_id}?api_key={$this->apiKey}")->json();
+            $movies->push($movie);
+        }
+
+        return view('watchlist', compact('movies'));
+    }
+
 }

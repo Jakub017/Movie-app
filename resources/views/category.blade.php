@@ -1,5 +1,7 @@
 @extends('layouts.main')
 
+@section('title', 'Category - Movie App')
+
 @section('content')
 
 <div class="category">

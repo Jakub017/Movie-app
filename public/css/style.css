@@ -281,7 +281,7 @@
   cursor: pointer;
   transition: all 0.3s ease-in-out;
   text-decoration: none;
-  width: 170px;
+  width: 185px;
   text-align: center;
   animation: fade-in-left 1s ease-in-out 1.5s both;
 }
@@ -825,6 +825,26 @@
   flex-wrap: wrap;
   width: 100%;
 }
+.movie-info__spacer {
+  height: 25px;
+  width: 1px;
+  background-color: #fff;
+}
+.movie-info__icon {
+  font-size: 28px;
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
+}
+.movie-info__icon:hover {
+  transform: translateY(-3px);
+}
+.movie-info__icon--active {
+  color: #DF3A3A;
+}
+.movie-info__actions {
+  display: flex;
+  gap: 15px;
+}
 .movie-info__button {
   padding: 10px 20px;
   border: 2px solid #DF3A3A;
@@ -1171,10 +1191,18 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 10px;
+  gap: 15px;
 }
-.movie-mobile-info__action-icon {
-  width: 28px;
+.movie-mobile-info__icon {
+  font-size: 28px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+.movie-mobile-info__icon:hover {
+  transform: translateY(-5px);
+}
+.movie-mobile-info__icon--active {
+  color: #DF3A3A;
 }
 .movie-mobile-info__title {
   margin-bottom: 0;
@@ -1425,6 +1453,65 @@
   transition: 0.3s ease-in-out;
 }
 
+.list {
+  background-color: #161616;
+}
+.list__wrapper {
+  padding: 120px 0;
+  width: 90%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+.list__heading {
+  color: #fff;
+}
+.list__movies {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-top: 40px;
+}
+.list__movie {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 90%;
+  max-width: 240px;
+  color: #fff;
+  text-decoration: none;
+  transition: 0.3s ease-in-out;
+}
+.list__link {
+  text-decoration: none;
+}
+.list__title {
+  color: #fff;
+  transition: 0.3s ease-in-out;
+  font-size: 1.8rem;
+}
+.list__link:hover .list__title {
+  color: #DF3A3A;
+}
+.list__rating-star {
+  width: 24px;
+  margin-top: -5px;
+  margin-left: -5px;
+}
+.list__info {
+  display: flex;
+  gap: 5px;
+}
+.list__image {
+  margin-bottom: 15px;
+  width: 100%;
+  display: block;
+}
+.list__excerpt {
+  color: #ccc;
+}
+
 @media (min-width: 768px) {
   .search__wrapper {
     justify-content: space-between;
@@ -1446,6 +1533,9 @@
   }
 }
 @media (min-width: 1024px) {
+  .list__movies {
+    justify-content: flex-start;
+  }
   .search__input {
     font-size: 20px;
     padding: 20px 30px 20px 50px;

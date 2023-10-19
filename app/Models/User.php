@@ -3,11 +3,11 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+use App\Models\Movie;
+use Laravel\Sanctum\HasApiTokens;
+use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Notifications\Notifiable;
-use Laravel\Sanctum\HasApiTokens;
-use stdClass;
 
 class User extends Authenticatable
 {
@@ -46,6 +46,11 @@ class User extends Authenticatable
 
     public function favourites()
     {
-        return $this->belongsToMany(\stdClass::class, 'favourites', 'user_id', 'movie_id');
+        return $this->belongsToMany(Movie::class, 'favourites', 'user_id', 'movie_id');
+    }
+
+    public function watchlists()
+    {
+        return $this->belongsToMany(Movie::class, 'watchlists', 'user_id', 'movie_id');
     }
 }

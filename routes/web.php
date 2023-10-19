@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PagesController;
+use App\Http\Controllers\MoviesController;
 use App\Http\Controllers\ProfileController;
 
 /*
@@ -20,6 +21,8 @@ Route::controller(PagesController::class)->group(function() {
     Route::get('/movie/{movieId}', 'movie')->name('movie');
     Route::get('/category/{categoryId}', 'category')->name('category');
     Route::get('/search', 'search')->name('search');
+    Route::get('/watchlist', 'watchlist')->middleware(['auth', 'verified'])->name('watchlist');
+    Route::get('/favourites', 'favourites')->middleware(['auth', 'verified'])->name('favourites');
 });
 
 Route::get('/dashboard', function () {

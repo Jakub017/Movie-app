@@ -38,10 +38,12 @@
                         <a href="#" class="nav__profile-link"><i class="fa-solid fa-user"></i> Profile</a>
                     </li>
                     <li class="nav__profile-item">
-                        <a href="#" class="nav__profile-link"><i class="fa-regular fa-clock"></i> Watchlist</a>
+                        <a href="{{route('watchlist')}}" class="nav__profile-link"><i class="fa-regular fa-clock"></i>
+                            Watchlist</a>
                     </li>
                     <li class="nav__profile-item">
-                        <a href="#" class="nav__profile-link"><i class="fa-solid fa-heart"></i> Favourites</a>
+                        <a href="{{route('favourites')}}" class="nav__profile-link"><i class="fa-solid fa-heart"></i>
+                            Favourites</a>
                     </li>
                     <li class="nav__profile-item">
                         <form method="POST" action="{{route('logout')}}">

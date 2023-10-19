@@ -1,6 +1,6 @@
 @extends('layouts.auth')
 
-@section('title', 'Login - Movie App')
+@section('title', 'Register - Movie App')
 
 
 @section('content')

@@ -1,11 +1,10 @@
 @extends('layouts.main')
 
-@section('title', 'Home')
+@section('title', 'Homepage - Movie App')
 
 @section('content')
 
 <section class="hero">
-
     <div class="hero__text">
         <h3 class="hero__welcome">Welcome</h3>
         <h1 class="hero__header">Your own movie library</h1>
@@ -14,8 +13,8 @@
             itaque aliquid dolorem
             consectetur illum aliquam.</p>
         <div class="hero__buttons">
-            <a href="" class="hero__button">Latest movies</a>
-            <a href="" class="hero__button hero__button--colored">Get started</a>
+            <a href="" class="hero__button">Popular movies</a>
+            <a href="" class="hero__button hero__button--colored">About this app</a>
         </div>
 
     </div>
@@ -25,8 +24,6 @@
         <span class="hero__bullet">Official movies</span>
         <span class="hero__bullet">All in one place</span>
     </div>
-
-
 </section>
 <section class="section genres">
     <div class="section__wrapper">
