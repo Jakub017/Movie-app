@@ -1261,17 +1261,15 @@ $desktop-body-text: 18px;
     }
 
     &__similar-wrapper {
+        width: 100%;
+        overflow: hidden;
         max-width: 1300px;
-        overflow-x: hidden;
-        position: relative;
     }
 
     &__similar-slider {
-        margin-top: 30px;
         display: flex;
-        justify-content: center;
-        align-items: flex-start;
-        gap: 30px;
+        justify-content: flex-start;
+        align-items: center;
         width: fit-content;
     }
 
@@ -1295,10 +1293,6 @@ $desktop-body-text: 18px;
     &__similar-image {
         width: 100%;
         border-radius: 10px;
-    }
-
-    &__similar-title {
-        font-weight: 300;
     }
 
     &__similar-controls {
@@ -1786,6 +1780,93 @@ $desktop-body-text: 18px;
 
 }
 
+.edit {
+    background-color: $primary-color;
+
+    &__wrapper {
+        padding: 120px 0;
+        width: 90%;
+        max-width: 1400px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    &__heading {
+        color: #fff;
+        margin-bottom: 0;
+    }
+
+    &__tile {
+        box-shadow: 0 0 3px #131212;
+        background-color: $light-black;
+        padding: 20px;
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    &__title {
+        color: #fff;
+        margin-bottom: 0;
+    }
+
+    &__text {
+        margin-bottom: 0;
+        color: #ccc;
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        max-width: 500px;
+    }
+
+    &__group {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    &__label {
+        color: #ccc;
+    }
+
+    &__input {
+        width: 100%;
+        font-size: 16px;
+        padding: 10px;
+        background-color: #fff;
+        width: 100%;
+        outline: none;
+        border: none;
+        color: #000;
+        border-radius: 5px;
+    }
+
+    &__submit {
+        width: fit-content;
+        padding: 10px 20px;
+        border-radius: 5px;
+        border: none;
+        outline: none;
+        background-color: $dark-black;
+        color: #fff;
+
+        &--delete {
+            background-color: $primary-red;
+        }
+    }
+
+    &__saved {
+        color: #ccc;
+    }
+}
+
+
 // Media Queries
 @media(min-width: 768px) {
 
@@ -2010,11 +2091,6 @@ $desktop-body-text: 18px;
             justify-content: flex-start;
         }
 
-        &__similar-wrapper {
-            gap: 40px;
-            justify-content: flex-start;
-        }
-
         &__info-column {
             flex-basis: 47%;
         }
@@ -2101,7 +2177,3 @@ $desktop-body-text: 18px;
         transform: translateY(0);
     }
 }
-
-// .swiper-slide {
-//     width: 280px;
-// }

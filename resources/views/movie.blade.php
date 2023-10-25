@@ -12,7 +12,7 @@
             <div class="movie-info__basic-details">
                 <div class="movie-info__rating">
                     <img src="{{asset('img/about/favourites-icon.png')}}" alt="" class="movie-info__rating-star">
-                    {{ $movie['vote_average'] }}
+                    {{ number_format($movie['vote_average'], 1) }}
                 </div>
                 <span class="movie-info__length">{{ $movie['runtime'] }} min</span>
                 <ul class="movie-info__genres">
@@ -28,8 +28,13 @@
             </div>
             <p class="movie-info__description">{{ $movie['overview'] }}</p>
             <div class="movie-info__buttons">
-                <a href="" class="movie-info__button movie-info__button--colored">Watch trailer</a>
-                <a href="" class="movie-info__button">Visit Just Watch</a>
+                @if($trailer)
+                <a target="_blank" href="https://www.youtube.com/watch?v={{$trailer['key']}}"
+                    class="movie-info__button movie-info__button--colored">Watch trailer</a>
+                @endif
+                @if($tmdb)
+                <a target="_blank" href="{{$tmdb['link']}}" class="movie-info__button">Visit TMDB</a>
+                @endif
                 <div class="movie-info__spacer"></div>
                 <livewire:desktop-lists :movie="$movie" />
             </div>
@@ -57,7 +62,7 @@
         <div class="movie-mobile-info__top">
             <div class="movie-mobile-info__rating">
                 <img src="{{asset('img/about/favourites-icon.png')}}" alt="" class="movie-info__rating-star">
-                {{ $movie['vote_average'] }}
+                {{ number_format($movie['vote_average'], 1) }}
             </div>
             <livewire:mobile-lists :movie="$movie" />
         </div>
@@ -76,8 +81,13 @@
         </div>
         <p class="movie-mobile-info__description">{{ $movie['overview'] }}</p>
         <div class="movie-mobile-info__buttons">
-            <a href="" class="movie-mobile-info__button movie-mobile-info__button--colored">Watch trailer</a>
-            <a href="" class="movie-mobile-info__button">Visit Just Watch</a>
+            @if($trailer)
+            <a target="_blank" href="https://www.youtube.com/watch?v={{$trailer['key']}}"
+                class="movie-mobile-info__button movie-mobile-info__button--colored">Watch trailer</a>
+            @endif
+            @if($tmdb)
+            <a target="_blank" href="{{$tmdb['link']}}" class="movie-mobile-info__button">Visit Just Watch</a>
+            @endif
         </div>
         <div class="movie-mobile-info__posters">
             <h2 class="movie-mobile-info__posters-heading">Images</h2>
@@ -102,13 +112,29 @@
         </div>
         <div class="movie-more__wrapper">
             <div class="movie-more__links">
-                <img src="{{asset('img/movies-posters/ant-man-poster.jpg')}}" alt="" class="movie-more__poster">
+                <img src="{{ 'https://image.tmdb.org/t/p/w500'.$movie['poster_path'] }}" alt=""
+                    class="movie-more__poster">
                 <div class="movie-more__socials">
-                    <a href="#"><img class="movie-more__social" src="{{asset('img/facebook-icon.png')}}" alt=""></a>
-                    <a href="#"><img class="movie-more__social" src="{{asset('img/twitter-icon.png')}}" alt=""></a>
-                    <a href="#"><img class="movie-more__social" src="{{asset('img/instagram-icon.png')}}" alt=""></a>
-                    <a href="#"><img class="movie-more__social movie-more__social--website"
+                    @if($externalIds['facebook_id'])
+                    <a href="https://www.facebook.com/{{$externalIds['facebook_id']}}" target="_blank"><img
+                            class="movie-more__social movie-more__social--facebook"
+                            src="{{asset('img/facebook-icon.png')}}" alt=""></a>
+                    @endif
+                    @if($externalIds['instagram_id'])
+                    <a href="https://www.instagram.com/{{$externalIds['instagram_id']}}" target="_blank"><img
+                            class="movie-more__social movie-more__social--instagram"
+                            src="{{asset('img/instagram-icon.png')}}" alt=""></a>
+                    @endif
+                    @if($externalIds['twitter_id'])
+                    <a href="https://www.twitter.com/{{$externalIds['twitter_id']}}" target="_blank"><img
+                            class="movie-more__social movie-more__social--twitter"
+                            src="{{asset('img/twitter-icon.png')}}" alt=""></a>
+                    @endif
+                    @if($movie['homepage'])
+                    <a href="{{$movie['homepage']}}" target="_blank"><img
+                            class="movie-more__social movie-more__social--website"
                             src="{{asset('img/website-icon.png')}}" alt=""></a>
+                    @endif
                 </div>
             </div>
             <div class="movie-more__info">
@@ -139,23 +165,23 @@
                     <h4 class="movie-more__info-heading">Information</h4>
                     <div class="movie-more__info-details">
                         <div class="movie-more__info-detail">
-                            <b>Status </b> Released
+                            <b>Status </b> {{$movie['status']}}
                         </div>
                         <div class="movie-more__info-detail">
-                            <b>Original Language </b> English
+                            <b>Runtime </b> {{$movie['runtime']}} min
                         </div>
                         <div class="movie-more__info-detail">
-                            <b>Budget </b> $200,000,000.00
+                            <b>Budget </b> ${{ number_format($movie['budget'], 2) }}
                         </div>
                         <div class="movie-more__info-detail">
-                            <b>Revenue </b> $473,237,851.00
+                            <b>Revenue </b> ${{ number_format($movie['revenue'], 2) }}
                         </div>
                     </div>
                 </div>
             </div>
         </div>
         <div class="movie-more__actors">
-            <h2 class="movie-more__actors-heading">Actors</h2>
+            <h2 class="movie-more__actors-heading">Best paid cast</h2>
             <div class="movie-more__actors-wrapper">
                 <div class="movie-more__actor">
                     <img src="{{asset('img/actors-images/actor-5.jpg')}}" alt="" class="movie-more__actor-photo">
@@ -173,57 +199,28 @@
         </div>
         <div class="movie-more__similar">
             <h2 class="movie-more__similar-heading">Similar movies</h2>
-            <div class="movie-more__similar-wrapper">
-                <div class="movie-more__similar-slider">
-                    <a href="#" class="movie-more__similar-item">
-                        <img src="{{asset('img/movies-posters/ant-man-poster.jpg')}}"
+            <div class="swiper swiper-similar movie-more__similar-wrapper">
+                <div class="swiper-wrapper movie-more__similar-slider">
+                    @foreach($similarMovies as $similarMovie)
+                    <a href="{{route('movie', $similarMovie['id'])}}" class="swiper-slide movie-more__similar-item">
+                        @if($similarMovie['poster_path'])
+                        <img src="{{ 'https://image.tmdb.org/t/p/w500'.$similarMovie['poster_path'] }}"
                             class="movie-more__similar-image" />
-                        <h5 class="movie-more__similar-title">Ant-Man and The Wasp: Quantumania</h5>
+                        @else
+                        <img src="{{'https://placehold.co/200x300?text=No+Image'}}" class="movie-more__similar-image" />
+                        @endif
+                        <h5 class="movie-more__similar-title">{{ $similarMovie['title'] }}</h5>
                     </a>
-                    <a href="#" class="movie-more__similar-item">
-                        <img src="{{asset('img/movies-posters/ant-man-poster.jpg')}}"
-                            class="movie-more__similar-image" />
-                        <h5 class="movie-more__similar-title">Ant-Man and The Wasp: Quantumania</h5>
-                    </a>
-                    <a href="#" class="movie-more__similar-item">
-                        <img src="{{asset('img/movies-posters/ant-man-poster.jpg')}}"
-                            class="movie-more__similar-image" />
-                        <h5 class="movie-more__similar-title">Ant-Man and The Wasp: Quantumania</h5>
-                    </a>
-                    <a href="#" class="movie-more__similar-item">
-                        <img src="{{asset('img/movies-posters/ant-man-poster.jpg')}}"
-                            class="movie-more__similar-image" />
-                        <h5 class="movie-more__similar-title">Ant-Man and The Wasp: Quantumania</h5>
-                    </a>
-                    <a href="#" class="movie-more__similar-item">
-                        <img src="{{asset('img/movies-posters/ant-man-poster.jpg')}}"
-                            class="movie-more__similar-image" />
-                        <h5 class="movie-more__similar-title">Ant-Man and The Wasp: Quantumania</h5>
-                    </a>
-                    <a href="#" class="movie-more__similar-item">
-                        <img src="{{asset('img/movies-posters/ant-man-poster.jpg')}}"
-                            class="movie-more__similar-image" />
-                        <h5 class="movie-more__similar-title">Ant-Man and The Wasp: Quantumania</h5>
-                    </a>
-                    <a href="#" class="movie-more__similar-item">
-                        <img src="{{asset('img/movies-posters/ant-man-poster.jpg')}}"
-                            class="movie-more__similar-image" />
-                        <h5 class="movie-more__similar-title">Ant-Man and The Wasp: Quantumania</h5>
-                    </a>
-                    <a href="#" class="movie-more__similar-item">
-                        <img src="{{asset('img/movies-posters/ant-man-poster.jpg')}}"
-                            class="movie-more__similar-image" />
-                        <h5 class="movie-more__similar-title">Ant-Man and The Wasp: Quantumania</h5>
-                    </a>
+                    @endforeach
                 </div>
             </div>
             <div class="movie-more__similar-controls">
                 <div class="movie-more__similar-line"></div>
                 <div class="movie-more__similar-arrows">
-                    <div class="movie-more__similar-arrow-wrapper movie-more__similar-arrow-wrapper--next">
+                    <div class="movie-more__similar-arrow-wrapper movie-more__similar-arrow-wrapper--prev">
                         <img class="movie-more__similar-arrow" src="{{asset('img/arrow-left.png')}}" alt="">
                     </div>
-                    <div class="movie-more__similar-arrow-wrapper movie-more__similar-arrow-wrapper--prev">
+                    <div class="movie-more__similar-arrow-wrapper movie-more__similar-arrow-wrapper--next">
                         <img class="movie-more__similar-arrow" src="{{asset('img/arrow-right.png')}}" alt="">
                     </div>
                 </div>
@@ -231,6 +228,9 @@
         </div>
 </section>
 
-<script src="{{asset('js/movie-icons.js')}}"></script>
-
 @endsection
+
+@section('scripts')
+<script>
+
+</script>

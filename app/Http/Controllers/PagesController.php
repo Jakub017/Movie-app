@@ -29,11 +29,24 @@ class PagesController extends Controller
         $similarMovies = Http::get("https://api.themoviedb.org/3/movie/$movieId/similar?api_key={$this->apiKey}")->json()['results'];
         $videos = Http::get("https://api.themoviedb.org/3/movie/$movieId/videos?api_key={$this->apiKey}")->json()['results'];
         $cast = Http::get("https://api.themoviedb.org/3/movie/$movieId/credits?api_key={$this->apiKey}")->json()['cast'];
+        $response = collect(Http::get("https://api.themoviedb.org/3/movie/$movieId/watch/providers?api_key={$this->apiKey}")->json()['results']);
+        $externalIds = Http::get("https://api.themoviedb.org/3/movie/$movieId/external_ids?api_key={$this->apiKey}")->json();
+
+        if(isset($response['US'])) {
+            $tmdb = $response['US'];
+        } else {
+            $tmdb = $response->first(); 
+        } 
+
         $actors = array_filter($cast, function($actor){
             return $actor['profile_path'] !== null;
         });
 
-        return view('movie', compact('movie', 'posters', 'similarMovies', 'videos', 'actors'));
+        $trailer = collect($videos)->first(function($video){
+            return $video['type'] === 'Trailer';
+        });
+
+        return view('movie', compact('movie', 'posters', 'similarMovies', 'trailer', 'actors', 'tmdb', 'externalIds'));
     }
 
     public function category($categoryId){

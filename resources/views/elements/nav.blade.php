@@ -35,7 +35,8 @@
                 </div>
                 <ul class="nav__profile-list">
                     <li class="nav__profile-item">
-                        <a href="#" class="nav__profile-link"><i class="fa-solid fa-user"></i> Profile</a>
+                        <a href="{{route('profile.edit')}}" class="nav__profile-link"><i class="fa-solid fa-user"></i>
+                            Profile</a>
                     </li>
                     <li class="nav__profile-item">
                         <a href="{{route('watchlist')}}" class="nav__profile-link"><i class="fa-regular fa-clock"></i>

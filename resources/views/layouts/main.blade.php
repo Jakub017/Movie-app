@@ -32,10 +32,10 @@
 
 <script src="{{asset('js/menu.js')}}"></script>
 <script>
-    var swiper = new Swiper(".swiper", {
+    var swiper = new Swiper(".swiper-main", {
         slidesPerView: "auto",
         slidesPerGroup: 1,
-        spaceBetween: 40,
+        spaceBetween: 30,
         loop: true,
         grabCursor: true,
 
@@ -45,32 +45,34 @@
         },
     });
 
-    var swiper2 = new Swiper(".swiper-desktop", {
+    var swiper1 = new Swiper(".swiper-desktop", {
         slidesPerView: "auto",
         slidesPerGroup: 1,
-        spaceBetween: 20,
+        spaceBetween: 10,
+        loop: true,
+        grabCursor: true,
+    });
+
+    var swiper2 = new Swiper(".swiper-mobile", {
+        slidesPerView: "auto",
+        slidesPerGroup: 1,
+        spaceBetween: 10,
+        loop: true,
+        grabCursor: true,
+    });
+
+    var swiper3 = new Swiper(".swiper-similar", {
+        slidesPerView: "auto",
+        slidesPerGroup: 1,
+        spaceBetween: 30,
         loop: true,
         grabCursor: true,
 
         navigation: {
-            nextEl: ".popular__arrow-wrapper--next",
-            prevEl: ".popular__arrow-wrapper--prev",
+            nextEl: ".movie-more__similar-arrow-wrapper--next",
+            prevEl: ".movie-more__similar-arrow-wrapper--prev",
         },
     });
-
-    var swiper3 = new Swiper(".swiper-mobile", {
-        slidesPerView: "auto",
-        slidesPerGroup: 1,
-        spaceBetween: 20,
-        loop: true,
-        grabCursor: true,
-
-        navigation: {
-            nextEl: ".popular__arrow-wrapper--next",
-            prevEl: ".popular__arrow-wrapper--prev",
-        },
-    });
-
 </script>
 
 </html>

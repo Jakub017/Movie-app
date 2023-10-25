@@ -130,7 +130,7 @@
             </h3>
         </div>
         <div class="popular__wrapper">
-            <div class="swiper popular__movies">
+            <div class="swiper swiper-main popular__movies">
                 <div class="swiper-wrapper popular__movies-container">
                     @foreach($popularMovies as $popularMovie)
                     <div class="swiper-slide popular__movie">

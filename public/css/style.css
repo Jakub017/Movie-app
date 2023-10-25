@@ -1066,16 +1066,14 @@
   border-radius: 10px;
 }
 .movie-more__similar-wrapper {
+  width: 100%;
+  overflow: hidden;
   max-width: 1300px;
-  overflow-x: hidden;
-  position: relative;
 }
 .movie-more__similar-slider {
-  margin-top: 30px;
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 30px;
+  justify-content: flex-start;
+  align-items: center;
   width: -moz-fit-content;
   width: fit-content;
 }
@@ -1096,9 +1094,6 @@
 .movie-more__similar-image {
   width: 100%;
   border-radius: 10px;
-}
-.movie-more__similar-title {
-  font-weight: 300;
 }
 .movie-more__similar-controls {
   display: flex;
@@ -1515,6 +1510,80 @@
   color: #ccc;
 }
 
+.edit {
+  background-color: #161616;
+}
+.edit__wrapper {
+  padding: 120px 0;
+  width: 90%;
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.edit__heading {
+  color: #fff;
+  margin-bottom: 0;
+}
+.edit__tile {
+  box-shadow: 0 0 3px #131212;
+  background-color: #1f1e1e;
+  padding: 20px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.edit__title {
+  color: #fff;
+  margin-bottom: 0;
+}
+.edit__text {
+  margin-bottom: 0;
+  color: #ccc;
+}
+.edit__form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 500px;
+}
+.edit__group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.edit__label {
+  color: #ccc;
+}
+.edit__input {
+  font-size: 16px;
+  padding: 10px;
+  background-color: #fff;
+  width: 100%;
+  outline: none;
+  border: none;
+  color: #000;
+  border-radius: 5px;
+}
+.edit__submit {
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  background-color: #131212;
+  color: #fff;
+}
+.edit__submit--delete {
+  background-color: #DF3A3A;
+}
+.edit__saved {
+  color: #ccc;
+}
+
 @media (min-width: 768px) {
   .search__wrapper {
     justify-content: space-between;
@@ -1670,10 +1739,6 @@
     font-size: 18px;
   }
   .movie-more__actors-wrapper {
-    gap: 40px;
-    justify-content: flex-start;
-  }
-  .movie-more__similar-wrapper {
     gap: 40px;
     justify-content: flex-start;
   }
