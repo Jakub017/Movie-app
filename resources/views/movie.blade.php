@@ -181,20 +181,20 @@
             </div>
         </div>
         <div class="movie-more__actors">
-            <h2 class="movie-more__actors-heading">Best paid cast</h2>
+            <h2 class="movie-more__actors-heading">Actors</h2>
             <div class="movie-more__actors-wrapper">
+                @foreach ($casts as $actor)
                 <div class="movie-more__actor">
-                    <img src="{{asset('img/actors-images/actor-5.jpg')}}" alt="" class="movie-more__actor-photo">
-                    <h5 class="movie-more__actor-name">Paul Rudd</h5>
-                    <span class="movie-more__actor-role">Scott Lang / Ant-Man</span>
+                    @if($actor['profile_path'])
+                    <img src="{{ 'https://image.tmdb.org/t/p/w200'.$actor['profile_path'] }}" alt=""
+                        class="movie-more__actor-photo">
+                    @else
+                    <img src="{{'https://placehold.co/200x300?text=No+Image'}}" alt="" class="movie-more__actor-photo">
+                    @endif
+                    <h5 class="movie-more__actor-name">{{ $actor['name'] }}</h5>
+                    <span class="movie-more__actor-role">{{ $actor['character'] }}</span>
                 </div>
-
-                <div class="movie-more__actor movie-more__actor--more">
-                    <div class="movie-more__actor-more">
-                        <img class="movie-more__actor-more-icon" src="{{asset('img/dots-icon.png')}}" alt="">
-                    </div>
-                    <h5 class="movie-more__actor-role">View All</h5>
-                </div>
+                @endforeach
             </div>
         </div>
         <div class="movie-more__similar">
