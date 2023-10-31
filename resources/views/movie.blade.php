@@ -141,24 +141,36 @@
                 <div class="movie-more__info-column">
                     <h4 class="movie-more__info-heading">Team</h4>
                     <div class="movie-more__info-details">
+                        @if($writer)
                         <div class="movie-more__info-detail">
-                            <b>Writer </b> Jeff Loveness
+                            <b>Writer </b> {{$writer['name']}}
                         </div>
+                        @endif
+                        @if($director)
                         <div class="movie-more__info-detail">
-                            <b>Director </b> Peyton Reed
+                            <b>Director </b> {{$director['name']}}
                         </div>
+                        @endif
+                        @if($casting)
                         <div class="movie-more__info-detail">
-                            <b>Characters </b> Stan Lee
+                            <b>Casting </b> {{$casting['name']}}
                         </div>
+                        @endif
+                        @if($story)
                         <div class="movie-more__info-detail">
-                            <b>Characters </b> Larry Lieber
+                            <b>Story </b> {{$story['name']}}
                         </div>
+                        @endif
+                        @if($characters)
                         <div class="movie-more__info-detail">
-                            <b>Characters </b> Jack Kirby
+                            <b>Characters </b> {{$characters['name']}}
                         </div>
+                        @endif
+                        @if($stunt)
                         <div class="movie-more__info-detail">
-                            <b>Characters </b> Ernie Hart
+                            <b>Characters </b> {{$stunt['name']}}
                         </div>
+                        @endif
                     </div>
                 </div>
                 <div class="movie-more__info-column">
@@ -199,19 +211,22 @@
         </div>
         <div class="movie-more__similar">
             <h2 class="movie-more__similar-heading">Similar movies</h2>
-            <div class="swiper swiper-similar movie-more__similar-wrapper">
-                <div class="swiper-wrapper movie-more__similar-slider">
-                    @foreach($similarMovies as $similarMovie)
-                    <a href="{{route('movie', $similarMovie['id'])}}" class="swiper-slide movie-more__similar-item">
-                        @if($similarMovie['poster_path'])
-                        <img src="{{ 'https://image.tmdb.org/t/p/w500'.$similarMovie['poster_path'] }}"
-                            class="movie-more__similar-image" />
-                        @else
-                        <img src="{{'https://placehold.co/200x300?text=No+Image'}}" class="movie-more__similar-image" />
-                        @endif
-                        <h5 class="movie-more__similar-title">{{ $similarMovie['title'] }}</h5>
-                    </a>
-                    @endforeach
+            <div class="movie-more__similar-wrapper">
+                <div class="swiper swiper-similar movie-more__similar-movies">
+                    <div class="swiper-wrapper movie-more__similar-container">
+                        @foreach($similarMovies as $similarMovie)
+                        <a href="{{route('movie', $similarMovie['id'])}}" class="swiper-slide movie-more__similar-item">
+                            @if($similarMovie['poster_path'])
+                            <img src="{{ 'https://image.tmdb.org/t/p/w500'.$similarMovie['poster_path'] }}"
+                                class="movie-more__similar-image" />
+                            @else
+                            <img src="{{'https://placehold.co/200x300?text=No+Image'}}"
+                                class="movie-more__similar-image" />
+                            @endif
+                            <h5 class="movie-more__similar-title">{{ $similarMovie['title'] }}</h5>
+                        </a>
+                        @endforeach
+                    </div>
                 </div>
             </div>
             <div class="movie-more__similar-controls">

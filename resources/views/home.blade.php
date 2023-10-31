@@ -24,7 +24,7 @@
         <span class="hero__bullet">All in one place</span>
     </div>
 </section>
-<section class="section genres">
+<section id="genres" class="section genres">
     <div class="section__wrapper">
         <div class="section__heading">
             <h1 class="section__title">
@@ -118,8 +118,7 @@
         </div>
     </div>
 </section>
-
-<section class="section popular">
+<section id="popular" class="section popular">
     <div class="section__wrapper">
         <div class="section__heading">
             <h1 class="section__title">Most popular movies in 2023</h1>
@@ -141,7 +140,7 @@
                         </a>
                         <div class="popular__info">
                             <span class="popular__rating"><img class="popular__rating-star"
-                                    src="{{asset('img/red_star.png')}}" alt="">{{ $popularMovie['vote_average']
+                                    src="{{asset('img/red_star.png')}}" alt="">{{ number_format($popularMovie['vote_average'], 1)
                                 }}</span>
                             <span>|</span>
                             <span class="popular__year">{{
@@ -170,7 +169,7 @@
 
     </div>
 </section>
-<section class="section about">
+<section id="about" class="section about">
     <div class="section__wrapper">
         <div class="section__heading">
             <h1 class="section__title">About this app</h1>
@@ -216,8 +215,7 @@
         </div>
     </div>
 </section>
-
-<section class="section testimonials">
+<section id="testimonials" class="section testimonials">
     <div class="section__wrapper">
         <div class="section__heading">
             <h1 class="section__title">Testimonials</h1>

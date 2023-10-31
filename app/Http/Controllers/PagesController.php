@@ -29,6 +29,7 @@ class PagesController extends Controller
         $similarMovies = Http::get("https://api.themoviedb.org/3/movie/$movieId/similar?api_key={$this->apiKey}")->json()['results'];
         $videos = Http::get("https://api.themoviedb.org/3/movie/$movieId/videos?api_key={$this->apiKey}")->json()['results'];
         $actors = Http::get("https://api.themoviedb.org/3/movie/$movieId/credits?api_key={$this->apiKey}")->json()['cast'];
+        $crew = Http::get("https://api.themoviedb.org/3/movie/$movieId/credits?api_key={$this->apiKey}")->json()['crew'];
         $response = collect(Http::get("https://api.themoviedb.org/3/movie/$movieId/watch/providers?api_key={$this->apiKey}")->json()['results']);
         $externalIds = Http::get("https://api.themoviedb.org/3/movie/$movieId/external_ids?api_key={$this->apiKey}")->json();
 
@@ -44,8 +45,33 @@ class PagesController extends Controller
 
         $casts = collect($actors);
         $casts = $casts->sortByDesc('popularity')->where('profile_path', '!=', 'null')->take(7);
+        $crew = collect($crew);
 
-        return view('movie', compact('movie', 'posters', 'similarMovies', 'trailer', 'tmdb', 'externalIds', 'casts'));
+        $director = $crew->first(function($member) {
+            return $member['job'] === 'Director';
+        });
+
+        $writer = $crew->first(function($member) {
+            return $member['job'] === 'Writer';
+        });
+
+        $casting = $crew->first(function($member) {
+            return $member['job'] === 'Casting';
+        });
+
+        $story = $crew->first(function($member) {
+            return $member['job'] === 'Story';
+        });
+
+        $characters = $crew->first(function($member) {
+            return $member['job'] === 'Characters';
+        });
+
+        $stunt = $crew->first(function($member) {
+            return $member['job'] === 'Stunt';
+        });
+
+        return view('movie', compact('movie', 'posters', 'similarMovies', 'trailer', 'tmdb', 'externalIds', 'casts', 'director', 'writer', 'casting', 'story', 'characters', 'stunt'));
     }
 
     public function category($categoryId){

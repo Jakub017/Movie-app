@@ -9,7 +9,7 @@
         <img src="{{asset('img/logo-white.png')}}" alt="" class="auth__logo">
     </div>
     <h2 class="auth__heading">Login to your <br> account!</h2>
-    <p class="auth__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, fugiat. </p>
+    <p class="auth__text">Dive into a world of movies! Sign in and explore, favorite, and schedule your next watch.</p>
     <form method="POST" action="{{ route('login') }}" class="auth__form">
         @csrf
         <x-auth-session-status class="mb-4" :status="session('status')" />
@@ -34,20 +34,20 @@
         </div>
         <button class="auth__submit">Login</button>
     </form>
-    <div class="auth__spacer">
+    <!-- <div class="auth__spacer">
         <span class="auth__spacer-text">or</span>
     </div>
     <a href="#" class="auth__google"><i class="auth__google-icon fa-brands fa-google"></i> Login with
-        Google</a>
+        Google</a> -->
     <p class="auth__already">Don't have an account? <a class="auth__link" href="{{ route('register') }}">Register
             now!</a></p>
 </div>
 <div class="auth__slider">
     <img src="{{asset('img/auth2.jpg')}}" alt="" class="auth__image">
     <div class="auth__info">
-        <h3 class="auth__info-heading">Lorem Ipsum</h3>
-        <p class="auth__info-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde odio sapiente quo,
-            atque consequuntur aut perferendis, odit nesciunt iure quidem.</p>
+        <h3 class="auth__info-heading">Unleash Cinema</h3>
+        <p class="auth__info-text">Discover endless cinema, curated just for you. Stay updated with the latest releases
+            and share moments with friends. Sign up today!</p>
     </div>
 </div>
 @endsection

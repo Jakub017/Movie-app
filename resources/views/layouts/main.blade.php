@@ -29,7 +29,7 @@
 
 </body>
 <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-
+<script src="{{asset('js/navigation.js')}}"></script>
 <script src="{{asset('js/menu.js')}}"></script>
 <script>
     var swiper = new Swiper(".swiper-main", {
@@ -73,6 +73,7 @@
             prevEl: ".movie-more__similar-arrow-wrapper--prev",
         },
     });
+
 </script>
 
 </html>

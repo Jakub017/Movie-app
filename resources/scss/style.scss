@@ -1,5 +1,5 @@
 $primary-font: 'Poppins',
-    sans-serif;
+sans-serif;
 $dark-black: #131212;
 $primary-color: #161616;
 $light-black: #1f1e1e;
@@ -10,6 +10,7 @@ $primary-red: #DF3A3A;
     padding: 0;
     box-sizing: border-box;
     font-family: $primary-font;
+    scroll-padding-top: 80px;
 }
 
 $mobile-big-heading-text: 48px;
@@ -81,6 +82,11 @@ $desktop-body-text: 18px;
     top: 0;
     background-color: rgba(0, 0, 0, 0.5);
     padding: 10px 20px;
+    transition: 0.3s ease-in-out;
+
+    &--active {
+        background-color: rgba(0, 0, 0, 1);
+    }
 
 
     &__wrapper {
@@ -104,7 +110,7 @@ $desktop-body-text: 18px;
 
     &__menu-link {
         text-decoration: none;
-        color: #ccc;
+        color: #ddd;
         transition: 0.3s ease-in-out;
         font-weight: 400;
         letter-spacing: 0.5px;
@@ -260,7 +266,76 @@ $desktop-body-text: 18px;
             transform: skew(-30deg);
         }
     }
+}
 
+.mobile-nav {
+    position: fixed;
+    height: 100%;
+    width: 60%;
+    background-color: $primary-color;
+    top: 0;
+    right: -100%;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 15px;
+    box-shadow: 0 0 3px $primary-color;
+    transition: 0.3s ease-in-out;
+
+    &--active {
+        right: 0;
+    }
+
+    &__menu {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        justify-content: center;
+        align-items: flex-start;
+        list-style: none;
+    }
+
+    &__heading {
+        padding-left: 2rem;
+        color: #fff;
+    }
+
+    &__link {
+        color: #fff;
+        opacity: 0.9;
+        text-decoration: none;
+        transition: 0.3s ease-in-out;
+
+        &:hover,
+        &:focus,
+        &:active {
+            color: $primary-red;
+            opacity: 1;
+        }
+    }
+
+    &__close {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        color: #fff;
+        font-size: 35px;
+    }
+}
+
+.dark-background {
+    position: fixed;
+    width: 100%;
+    height: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 5;
+    backdrop-filter: blur(5px);
+
+    &--active {
+        height: 100vh;
+    }
 }
 
 
@@ -1260,16 +1335,46 @@ $desktop-body-text: 18px;
         }
     }
 
+
     &__similar-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        gap: 20px;
+        padding: 30px 0px;
         width: 100%;
-        overflow: hidden;
-        max-width: 1300px;
     }
 
-    &__similar-slider {
+    // &__list {
+    //     padding: 0;
+    //     list-style: none;
+    //     display: flex;
+    //     justify-content: center;
+    //     align-items: center;
+    //     flex-wrap: wrap;
+    //     gap: 20px;
+    //     width: 100%;
+    // }
+
+    &__similar-movies {
+        width: fit-content;
         display: flex;
-        justify-content: flex-start;
+        justify-content: space-between;
         align-items: center;
+        gap: 20px;
+        overflow: hidden;
+        width: 100%;
+        max-width: 1400px;
+        position: relative;
+    }
+
+    &__similar-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-wrap: nowrap;
         width: fit-content;
     }
 
@@ -1287,12 +1392,10 @@ $desktop-body-text: 18px;
         &:hover {
             color: #fff;
         }
-
     }
 
     &__similar-image {
         width: 100%;
-        border-radius: 10px;
     }
 
     &__similar-controls {
@@ -1312,7 +1415,7 @@ $desktop-body-text: 18px;
 
     &__similar-arrows {
         display: flex;
-        justify-content: center;
+        justify-content: flex-end;
         align-items: center;
         gap: 20px;
         width: 100%;
@@ -1908,7 +2011,11 @@ $desktop-body-text: 18px;
         &__movies {
             justify-content: flex-start;
         }
+    }
 
+    .mobile-nav,
+    .dark-background {
+        display: none;
     }
 
     .search {

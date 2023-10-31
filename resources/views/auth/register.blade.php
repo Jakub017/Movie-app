@@ -9,7 +9,8 @@
         <img src="{{asset('img/logo-white.png')}}" alt="" class="auth__logo">
     </div>
     <h2 class="auth__heading">Create your <br> account!</h2>
-    <p class="auth__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, fugiat. </p>
+    <p class="auth__text">Join the cinematic universe! Explore, rate, and curate your movie journey with personalized
+        recommendations.</p>
     <form method="POST" action="{{ route('register') }}" class="auth__form">
         @csrf
         <!-- <x-auth-session-status class="mb-4" :status="session('status')" /> -->
@@ -31,10 +32,10 @@
         </div>
         <button type="submit" class="auth__submit">Register</button>
     </form>
-    <div class="auth__spacer">
+    <!-- <div class="auth__spacer">
         <span class="auth__spacer-text">or</span>
     </div>
-    <a href="#" class="auth__google"><i class="auth__icon fa-brands fa-google"></i> Sign in with Google</a>
+    <a href="#" class="auth__google"><i class="auth__icon fa-brands fa-google"></i> Sign in with Google</a> -->
     <p class="auth__already">Already have an account? <a class="auth__link" href="{{ route('login') }}">Login now!</a>
     </p>
 </div>
@@ -42,8 +43,8 @@
     <img src="{{asset('img/auth.png')}}" alt="" class="auth__image">
     <div class="auth__info">
         <h3 class="auth__info-heading">Lorem Ipsum</h3>
-        <p class="auth__info-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde odio sapiente quo,
-            atque consequuntur aut perferendis, odit nesciunt iure quidem.</p>
+        <p class="auth__info-text">Dive Into Film Excellence: Our collection brings together both classics and new-age
+            cinema, offering a unique experience for every film enthusiast.</p>
     </div>
 </div>
 @endsection

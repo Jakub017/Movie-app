@@ -3,21 +3,24 @@
         <div class="footer__column">
             <h3 class="footer__heading">Quick menu</h3>
             <ul class="footer__list">
-                <li class="footer__item"><a href="#" class="footer__link">Home</a></li>
-                <li class="footer__item"><a href="#" class="footer__link">Genres</a></li>
-                <li class="footer__item"><a href="#" class="footer__link">Popular</a></li>
-                <li class="footer__item"><a href="#" class="footer__link">About</a></li>
-                <li class="footer__item"><a href="#" class="footer__link">Testimonials</a></li>
+                <li class="footer__item"><a class="footer__link">Home</a></li>
+                <li class="footer__item"><a class="footer__link">Genres</a></li>
+                <li class="footer__item"><a class="footer__link">Popular</a></li>
+                <li class="footer__item"><a class="footer__link">About</a></li>
+                <li class="footer__item"><a class="footer__link">Testimonials</a></li>
             </ul>
         </div>
         <div class="footer__column">
             <h3 class="footer__heading">Account</h3>
             <ul class="footer__list">
-                <li class="footer__item"><a href="#" class="footer__link">My account</a></li>
-                <li class="footer__item"><a href="#" class="footer__link">Login</a></li>
-                <li class="footer__item"><a href="#" class="footer__link">Register</a></li>
-                <li class="footer__item"><a href="#" class="footer__link">Favourites</a></li>
-                <li class="footer__item"><a href="#" class="footer__link">Watch list</a></li>
+                @auth
+                <li class="footer__item"><a href="{{route('profile.edit')}}" class="footer__link">My account</a></li>
+                <li class="footer__item"><a href="{{route('favourites')}}" class="footer__link">Favourites</a></li>
+                <li class="footer__item"><a href="{{route('watchlist')}}" class="footer__link">Watch list</a></li>
+                @else
+                <li class="footer__item"><a href="{{route('login')}}" class="footer__link">Login</a></li>
+                <li class="footer__item"><a href="{{route('register')}}" class="footer__link">Register</a></li>
+                @endauth
             </ul>
         </div>
         <div class="footer__column">
@@ -34,9 +37,8 @@
         </div>
         <div class="footer__column">
             <h3 class="footer__heading">Movie App</h3>
-            <p class="footer__text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quaerat provident,
-                magni obcaecati aliquid iusto aperiam modi ex excepturi beatae nisi amet sunt recusandae rem fuga,
-                non similique commodi possimus dolorem.</p>
+            <p class="footer__text">Discover the magic of cinema in one place. With our app, browse, search and delight
+                in the most thrilling movies from different genres.</p>
         </div>
     </div>
 

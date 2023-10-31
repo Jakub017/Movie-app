@@ -1,23 +1,46 @@
+<nav class="mobile-nav">
+    <i class="fa-solid fa-xmark mobile-nav__close"></i>
+    <h3 class="mobile-nav__heading">Main menu</h3>
+    <ul class="mobile-nav__menu">
+        <li class="mobile-nav__item">
+            <a href="{{route('home')}}" class="mobile-nav__link">Home</a>
+        </li>
+        <li class="mobile-nav__item">
+            <a href="{{route('home')}}#genres" class="mobile-nav__link">Genres</a>
+        </li>
+        <li class="mobile-nav__item">
+            <a href="{{route('home')}}#popular" class="mobile-nav__link">Popular</a>
+        </li>
+        <li class="mobile-nav__item">
+            <a href="{{route('home')}}#about" class="mobile-nav__link">About</a>
+        </li>
+        <li class="mobile-nav__item">
+            <a href="{{route('home')}}#testimonials" class="mobile-nav__link">Testimonials</a>
+        </li>
+    </ul>
+</nav>
+<div class="dark-background"></div>
 <nav class="nav">
     <div class="nav__wrapper">
         <div class="nav__logo-wrapper">
-            <img src="{{asset('img/logo-white.png')}}" alt="" class="nav__logo">
+            <a href="{{route('home')}}"><img src="{{asset('img/logo-white.png')}}" alt="Movie app logo"
+                    class="nav__logo"></a>
         </div>
         <ul class="nav__menu-list">
             <li class="nav__menu-item">
                 <a class="nav__menu-link" href="{{route('home')}}">Home</a>
             </li>
             <li class="nav__menu-item">
-                <a class="nav__menu-link" href="#">Genres</a>
+                <a class="nav__menu-link" href="{{route('home')}}#genres">Genres</a>
             </li>
             <li class="nav__menu-item">
-                <a class="nav__menu-link" href="#">Popular</a>
+                <a class="nav__menu-link" href="{{route('home')}}#popular">Popular</a>
             </li>
             <li class="nav__menu-item">
-                <a class="nav__menu-link" href="#">About</a>
+                <a class="nav__menu-link" href="{{route('home')}}#about">About</a>
             </li>
             <li class="nav__menu-item">
-                <a class="nav__menu-link" href="#">Testimonials</a>
+                <a class="nav__menu-link" href="{{route('home')}}#testimonials">Testimonials</a>
             </li>
         </ul>
         <ul class="nav__icons-menu">

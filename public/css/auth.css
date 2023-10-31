@@ -175,8 +175,8 @@
     margin-left: -18px;
   }
   .auth__form-wrapper {
-    max-width: 50%;
-    padding: 40px 80px;
+    max-width: 700px;
+    padding: 20px 40px;
   }
   .auth__form-wrapper--forgot {
     max-width: 800px;

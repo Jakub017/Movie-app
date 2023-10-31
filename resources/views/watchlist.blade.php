@@ -7,7 +7,6 @@
 <div class="list">
     <div class="list__wrapper">
         <h1 class="list__heading">Your watchlist</h1>
-
         <div class="list__movies">
             @foreach($movies as $movie)
             <div href="{{route('movie', $movie['id'])}}" class="list__movie">
@@ -17,9 +16,7 @@
                 </a>
                 <div class="list__info">
                     <span class="list__rating"><img class="list__rating-star" src="{{asset('img/red_star.png')}}"
-                            alt="">{{
-                        $movie['vote_average']
-                        }}</span>
+                            alt="">{{number_format($movie['vote_average'], 1)}}</span>
                     <span>|</span>
                     <span class="list__year">{{
                         \Carbon\Carbon::parse($movie['release_date'])->format('d.m.Y') }}</span>
