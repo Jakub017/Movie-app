@@ -88,6 +88,11 @@ $desktop-body-text: 18px;
         background-color: rgba(0, 0, 0, 1);
     }
 
+    &__mobile-icons {
+        display: flex;
+        gap: 15px;
+        align-items: center;
+    }
 
     &__wrapper {
         display: flex;
@@ -298,8 +303,20 @@ $desktop-body-text: 18px;
     }
 
     &__heading {
-        padding-left: 2rem;
+        margin-left: 2rem;
         color: #fff;
+        position: relative;
+        width: fit-content;
+
+        &::after {
+            content: "";
+            position: absolute;
+            width: 80%;
+            height: 2px;
+            background-color: $primary-red;
+            top: 100%;
+            left: 0;
+        }
     }
 
     &__link {
@@ -307,12 +324,30 @@ $desktop-body-text: 18px;
         opacity: 0.9;
         text-decoration: none;
         transition: 0.3s ease-in-out;
+        background-color: transparent;
+        border: none;
+        outline: none;
 
         &:hover,
         &:focus,
         &:active {
             color: $primary-red;
             opacity: 1;
+        }
+    }
+
+    &__user-link {
+        display: flex;
+        padding-left: 2rem;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 10px;
+        color: #fff;
+        text-decoration: none;
+        transition: 0.3s ease-in-out;
+
+        &:hover {
+            color: $primary-red;
         }
     }
 
@@ -2067,6 +2102,10 @@ $desktop-body-text: 18px;
     .nav {
         &__menu-link {
             font-size: $desktop-body-text;
+        }
+
+        &__mobile-icons {
+            display: none;
         }
 
         &__menu-list,

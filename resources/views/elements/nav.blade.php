@@ -18,6 +18,31 @@
             <a href="{{route('home')}}#testimonials" class="mobile-nav__link">Testimonials</a>
         </li>
     </ul>
+    <h3 class="mobile-nav__heading">Profile menu</h3>
+    @auth
+    <ul class="mobile-nav__menu">
+        <li class="mobile-nav__item">
+            <a href="{{route('profile.edit')}}" class="mobile-nav__link">Profile</a>
+        </li>
+        <li class="mobile-nav__item">
+            <a href="{{route('watchlist')}}" class="mobile-nav__link">Watchlist</a>
+        </li>
+        <li class="mobile-nav__item">
+            <a href="{{route('favourites')}}" class="mobile-nav__link">Favourites</a>
+        </li>
+        <li class="mobile-nav__item">
+            <form method="POST" action="{{route('logout')}}">
+                @csrf
+                <button type="submit" class="mobile-nav__link">Logout</button>
+            </form>
+        </li>
+    </ul>
+    @else
+    <a href="{{route('login')}}" class="mobile-nav__user-link">
+        <i class="nav__icons-menu-icon fa-regular fa-user"></i>
+        <span class="nav__icons-menu-login">Login</span>
+    </a>
+    @endauth
 </nav>
 <div class="dark-background"></div>
 <nav class="nav">
@@ -89,10 +114,15 @@
             @endauth
 
         </ul>
-        <div class="nav__hamburger-wrapper">
-            <div class="nav__hamburger-item"></div>
-            <div class="nav__hamburger-item"></div>
-            <div class="nav__hamburger-item"></div>
+        <div class="nav__mobile-icons">
+            <a href="{{route('search')}}" class="nav__mobile-search">
+                <i class="nav__icons-menu-icon fa-solid fa-magnifying-glass"></i>
+            </a>
+            <div class="nav__hamburger-wrapper">
+                <div class="nav__hamburger-item"></div>
+                <div class="nav__hamburger-item"></div>
+                <div class="nav__hamburger-item"></div>
+            </div>
         </div>
     </div>
 </nav>

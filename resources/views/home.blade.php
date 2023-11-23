@@ -12,8 +12,8 @@
             in the most thrilling movies from
             different genres.</p>
         <div class="hero__buttons">
-            <a href="" class="hero__button">Popular movies</a>
-            <a href="" class="hero__button hero__button--colored">About this app</a>
+            <a href="#popular" class="hero__button">Popular movies</a>
+            <a href="#about" class="hero__button hero__button--colored">About this app</a>
         </div>
 
     </div>
