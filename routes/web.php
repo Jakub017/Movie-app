@@ -1,7 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Laravel\Socialite\Facades\Socialite;
 use App\Http\Controllers\PagesController;
+use App\Http\Controllers\GoogleController;
 use App\Http\Controllers\MoviesController;
 use App\Http\Controllers\ProfileController;
 
@@ -24,6 +26,12 @@ Route::controller(PagesController::class)->group(function() {
     Route::get('/watchlist', 'watchlist')->middleware(['auth', 'verified'])->name('watchlist');
     Route::get('/favourites', 'favourites')->middleware(['auth', 'verified'])->name('favourites');
 });
+
+Route::controller(GoogleController::class)->group(function() {
+    Route::get('google/redirect', 'redirect')->name('google.redirect');
+    Route::get('google/callback', 'callback')->name('google.callback');
+});
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
