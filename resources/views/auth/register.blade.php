@@ -6,7 +6,9 @@
 @section('content')
 <div class="auth__form-wrapper">
     <div class="auth__logo-wrapper">
-        <img src="{{asset('img/logo-white.png')}}" alt="" class="auth__logo">
+        <a href="{{route('home')}}" class="auth__home">
+            <img src="{{asset('img/logo-white.png')}}" alt="" class="auth__logo">
+        </a>
     </div>
     <h2 class="auth__heading">Create your <br> account!</h2>
     <p class="auth__text">Join the cinematic universe! Explore, rate, and curate your movie journey with personalized

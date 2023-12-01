@@ -6,7 +6,10 @@
 @section('content')
 <div class="auth__form-wrapper auth__form-wrapper--forgot">
     <div class="auth__logo-wrapper">
-        <img src="{{asset('img/logo-white.png')}}" alt="" class="auth__logo">
+        <a href="{{route('home')}}" class="auth__home">
+            <img src="{{asset('img/logo-white.png')}}" alt="" class="auth__logo">
+        </a>
+
     </div>
     <h2 class="auth__heading">New password</h2>
     <p class="auth__text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vero atque magni maxime, aliquam
