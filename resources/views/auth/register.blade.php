@@ -32,10 +32,12 @@
         </div>
         <button type="submit" class="auth__submit">Register</button>
     </form>
-    <!-- <div class="auth__spacer">
+    <div class="auth__spacer">
         <span class="auth__spacer-text">or</span>
     </div>
-    <a href="#" class="auth__google"><i class="auth__icon fa-brands fa-google"></i> Sign in with Google</a> -->
+    <a href="{{route('google.redirect')}}" class="auth__google"><i class="auth__google-icon fa-brands fa-google"></i>
+        Sign in
+        with Google</a>
     <p class="auth__already">Already have an account? <a class="auth__link" href="{{ route('login') }}">Login now!</a>
     </p>
 </div>

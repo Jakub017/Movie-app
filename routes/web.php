@@ -27,10 +27,10 @@ Route::controller(PagesController::class)->group(function() {
     Route::get('/favourites', 'favourites')->middleware(['auth', 'verified'])->name('favourites');
 });
 
-Route::controller(GoogleController::class)->group(function() {
-    Route::get('google/redirect', 'redirect')->name('google.redirect');
-    Route::get('google/callback', 'callback')->name('google.callback');
-});
+    Route::controller(GoogleController::class)->group(function() {
+        Route::get('google/redirect', 'redirect')->name('google.redirect');
+        Route::get('/auth/google/callback', 'callback')->name('google.callback');
+    });
 
 
 Route::get('/dashboard', function () {

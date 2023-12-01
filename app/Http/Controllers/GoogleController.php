@@ -16,15 +16,19 @@ class GoogleController extends Controller
     public function callback() {
         $googleUser = Socialite::driver('google')->user();
 
-        $user = User::updateOrCreate([
-            'google_id' => $googleUser->id
-        ], [
-            'name' => $googleUser->name,
-            'email' => $googleUser->email,
-        ]);
+        $user = User::where('email', $googleUser->email)->first();
 
-        Auth::login($user);
+        if($user) {
+            Auth::login($user);
+            return redirect()->route('home');
+        } else {
+            $newUser = User::create([
+                'name' => $googleUser->name,
+                'email' => $googleUser->email,
+            ]);
 
-        return redirect()->route('home');
+            Auth::login($newUser);
+            return redirect()->route('home');
+        }
     }
 }
