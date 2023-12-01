@@ -1576,6 +1576,7 @@
   width: 90%;
   max-width: 1400px;
   margin: 0 auto;
+  min-height: 450px;
 }
 .list__heading {
   color: #fff;
@@ -1724,6 +1725,9 @@
 @media (min-width: 1024px) {
   .list__movies {
     justify-content: flex-start;
+  }
+  .list__wrapper {
+    min-height: 700px;
   }
   .mobile-nav,
   .dark-background {

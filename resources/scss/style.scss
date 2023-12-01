@@ -1,5 +1,5 @@
 $primary-font: 'Poppins',
-sans-serif;
+    sans-serif;
 $dark-black: #131212;
 $primary-color: #161616;
 $light-black: #1f1e1e;
@@ -1852,6 +1852,7 @@ $desktop-body-text: 18px;
         width: 90%;
         max-width: 1400px;
         margin: 0 auto;
+        min-height: 450px;
     }
 
     &__heading {
@@ -2045,6 +2046,10 @@ $desktop-body-text: 18px;
     .list {
         &__movies {
             justify-content: flex-start;
+        }
+
+        &__wrapper {
+            min-height: 700px;
         }
     }
 
